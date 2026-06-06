@@ -83,7 +83,20 @@ def recommend(horizon: str = "mid", top_n: int = 15) -> dict:
                 .set_index("code")["name"].to_dict())
 
     score = score[[c for c in score.index if c in members]].dropna()
-    picks = score.sort_values(ascending=False).head(top_n)
+    # セクター分散（リスク管理）: 同一33業種は最大 sector_cap 銘柄まで。
+    # 検証ではリターン中立だが、銀行・電力等への偏りを防ぎ集中リスクを下げる。
+    sec_map = (membership.sort_values("month_end").drop_duplicates("code", keep="last")
+               .set_index("code")["s33"].to_dict())
+    ranked = score.sort_values(ascending=False)
+    sector_cap = max(2, top_n // 4)   # 例: 上位15なら1業種最大3
+    chosen, sec_count = [], {}
+    for c in ranked.index:
+        s = sec_map.get(c, "?")
+        if sec_count.get(s, 0) < sector_cap:
+            chosen.append(c); sec_count[s] = sec_count.get(s, 0) + 1
+        if len(chosen) >= top_n:
+            break
+    picks = ranked.loc[chosen]
 
     last_price_date = prices.index[-1]
     items = []
