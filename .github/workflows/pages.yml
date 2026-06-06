@@ -36,6 +36,9 @@ jobs:
       - name: Install deps
         working-directory: backend
         run: pip install -e .
+      - name: Build caches（sim_px/sim_scores/sim_topix 等を生データから再生成）
+        working-directory: backend
+        run: python scripts/build_dashboard_data.py
       - name: Build web data（推奨/精度/最新株価/シミュ結果/解説をJSON・HTML化）
         working-directory: backend
         run: python scripts/export_web.py
