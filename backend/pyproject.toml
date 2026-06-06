@@ -11,6 +11,7 @@ dependencies = [
     "pyarrow>=15",     # parquetキャッシュ
     "fastapi>=0.115",  # API層
     "uvicorn>=0.30",   # ASGIサーバ
+    "apscheduler>=3.10",  # 日次スケジューラ
 ]
 
 [project.optional-dependencies]
