@@ -1,0 +1,21 @@
+[project]
+name = "kabuka-backend"
+version = "0.1.0"
+description = "日本株予測・売買シグナル kabuka のバックエンド（まず無料データでファクター検証）"
+requires-python = ">=3.12"
+dependencies = [
+    "yfinance>=0.2",   # 無料の株価(配当・分割調整済)取得
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",     # pandas の Spearman相関(IC計算)に必要
+    "pyarrow>=15",     # parquetキャッシュ
+]
+
+[project.optional-dependencies]
+# 後続フェーズで追加: API層・モデル・財務取得
+api = ["fastapi", "uvicorn", "sqlalchemy"]
+model = ["lightgbm", "scikit-learn", "optuna"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]

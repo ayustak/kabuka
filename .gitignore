@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 環境変数（APIキー等。リポジトリにコミットしない）
+.env
+
+# データキャッシュ（再取得可能なため追跡しない）
+backend/data/*.parquet
+
+# Claude Code のローカル個人設定（絶対パス等を含むため共有しない）
+.claude/settings.local.json
