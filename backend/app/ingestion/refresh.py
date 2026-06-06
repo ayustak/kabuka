@@ -28,6 +28,15 @@ def _today() -> str:
     return dt.date.today().isoformat()
 
 
+def _safe_start() -> str:
+    """新規銘柄/コールドスタート用の安全な取得開始日。
+
+    J-Quants Standardは10年ローリング。固定日(例 2016-06-06)だと枠の前進で
+    いずれ枠外落ち→400になるため、常に「今日-約10年+余裕」を起点にする。
+    """
+    return (dt.date.today() - dt.timedelta(days=365 * 10 - 14)).isoformat()
+
+
 def update_universe() -> pd.DataFrame:
     univ = pd.read_parquet(_UNIV) if _UNIV.exists() else pd.DataFrame(columns=["month_end", "code", "s33", "name"])
     last = univ["month_end"].max() if len(univ) else pd.Timestamp(START_DATE)
@@ -59,7 +68,7 @@ def update_prices(codes: list[str]) -> pd.DataFrame:
     for i, code in enumerate(codes):
         if i % 100 == 0:
             print(f"  prices {i}/{len(codes)}", flush=True)
-        start = frm if (len(existing) and code in existing.columns) else "2016-06-06"
+        start = frm if (len(existing) and code in existing.columns) else _safe_start()
         try:
             q = get_daily_quotes(code=code, from_=start, to=_today())
         except Exception as e:  # noqa: BLE001
@@ -86,7 +95,7 @@ def update_statements(codes: list[str]) -> pd.DataFrame:
 
 def update_topix() -> None:
     existing = pd.read_parquet(_TOPIX_CACHE)["C"] if _TOPIX_CACHE.exists() else pd.Series(dtype=float)
-    last = existing.index.max() if len(existing) else pd.Timestamp("2016-06-06")
+    last = existing.index.max() if len(existing) else pd.Timestamp(_safe_start())
     frm = (last + pd.Timedelta(days=1)).date().isoformat()
     rows = get_index(TOPIX_CODE, from_=frm, to=_today())
     if rows:

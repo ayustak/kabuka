@@ -11,6 +11,11 @@ __pycache__/
 backend/data/*.parquet
 # ただしライブ推奨ログは実時間の記録で再生成不可 → 追跡する
 !backend/data/reco_log.parquet
+# CIが毎回ゼロから10年分を取得しないよう、生データをシードとして同梱（差分更新の土台）
+!backend/data/jq_prices.parquet
+!backend/data/jq_statements.parquet
+!backend/data/universe_membership.parquet
+!backend/data/topix_index.parquet
 
 # 認証トークンのキャッシュ（秘密。絶対にコミットしない）
 backend/data/*.json

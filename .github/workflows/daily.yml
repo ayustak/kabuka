@@ -43,6 +43,8 @@ jobs:
         run: |
           git config user.name "kabuka-bot"
           git config user.email "kabuka-bot@users.noreply.github.com"
-          git add -f backend/data/reco_log.parquet backend/data/strategy_summary.json backend/data/signals_latest.json 2>/dev/null || true
-          git commit -m "chore: 日次フォワード実績の記録 $(date -u +%Y-%m-%d)" || echo "変更なし"
+          git add -f backend/data/reco_log.parquet backend/data/strategy_summary.json backend/data/signals_latest.json \
+                     backend/data/jq_prices.parquet backend/data/jq_statements.parquet \
+                     backend/data/universe_membership.parquet backend/data/topix_index.parquet 2>/dev/null || true
+          git commit -m "chore: 日次データ更新＋フォワード実績の記録 $(date -u +%Y-%m-%d)" || echo "変更なし"
           git push || echo "push不要"
