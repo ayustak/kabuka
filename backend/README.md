@@ -131,6 +131,62 @@ value_bp 追加後は **DSR=0.885**（11ファクター試行で多重検定補�
 **最終評価**: バリュー傾斜のシンプル戦略が本命。対TOPIX超過は**コスト後・税引前で+3〜4%/年**（控えめだが本物）。
 次は税引後/実執行を入れた到達点の見極めと、小額での実運用 or NISAインデックス主体かの判断。
 
+## 投資シミュレーター（ブラウザ・実投資前の検証）
+
+実投資の前に「もし自分がこう投資していたら」をブラウザで試せる。初期資金・保有銘柄数・
+リバランス頻度・口座種別(NISA/課税)を変えると、過去データで資産推移・対TOPIX・税・最大DDを再現。
+**100株単位・取引コスト・税(20.315%)を厳密に反映**（`app/analysis/simulate.py`）。
+
+```bash
+cd backend
+../.venv/bin/python scripts/build_dashboard_data.py   # データ生成（sim_px/sim_scores/sim_topix 等）
+../.venv/bin/uvicorn app.main:app                     # → http://127.0.0.1:8000
+```
+API: `GET /api/simulate?initial_capital=3000000&n_holdings=20&rebalance=Q&account=nisa`
+
+### シミュレーション例（¥300万・20銘柄, 2016–2024）
+
+| 口座×頻度 | 最終資産 | CAGR | 対TOPIX | 支払税 |
+|---|---|---|---|---|
+| **NISA・四半期** | **¥752万** | 12.0% | **+4.2%** | ¥0 |
+| NISA・月次 | ¥695万 | 11.0% | +3.2% | ¥0 |
+| 課税・年次 | ¥565万 | 8.1% | +0.3% | ¥89万 |
+| 課税・月次 | ¥433万 | 4.6% | −3.1% | ¥132万 |
+| 課税・月次・¥100万 | ¥111万 | 1.3% | −6.5% | ¥13万（平均5銘柄=分散不足） |
+
+**シミュレーターが教えること**: NISA＋四半期リバランスが最適。課税口座×高頻度は税で優位が消滅。
+小資金は100株単位制約で分散できず劣化。→ **NISA・低回転・¥5M+** が実運用の条件。
+
+## サーバーで自動運用する
+
+日次で「データ更新 → キャッシュ再生成 → 推奨スナップショット記録」を無人実行できる。
+中身は `app/scheduler/jobs.py::daily_refresh`（平日18:30 JST）。
+
+### 方法A: 常時稼働サーバー（推奨・APIも同時提供）
+`KABUKA_ENABLE_SCHEDULER=1` で uvicorn を起動すると、プロセス内のAPSchedulerが日次実行。
+```bash
+KABUKA_ENABLE_SCHEDULER=1 ../.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+小さなVPS/クラウドVM（常時起動）に置けば、毎日自動で最新化＆実績記録が貯まる。
+
+### 方法B: Docker（どこでも）
+```bash
+docker build -t kabuka backend
+docker run -d -p 8000:8000 --env-file backend/.env -v kabuka-data:/app/data kabuka
+```
+`-v` でデータを永続化（reco_log等を保持）。スケジューラはイメージで既定ON。
+
+### 方法C: cron（サーバーやMacの常駐なしで日次バッチだけ）
+```cron
+30 18 * * 1-5  cd /path/to/kabuka/backend && /path/to/.venv/bin/python -m app.scheduler.jobs
+```
+APIを使わず日次パイプラインだけ回したいとき。Macなら launchd でも可（電源ON時のみ）。
+
+### 注意
+- `.env`（J-Quants/EDINETキー）をサーバーに安全に配置する（コミットしない）。
+- `data/` を永続ボリュームに（特に `reco_log.parquet` は再生成不可なライブ実績）。
+- 手元Macは「電源ON時だけ」動く。毎日確実に貯めたいなら常時稼働のVPS/クラウドが必要。
+
 ## (旧) 無料データMVPの次の一手メモ: 本命の **value/quality** を入れる。履歴財務が要るため yfinance（現時点スナップショットのみ＝非PIT）では不可。
 EDINET API（無料・要キー）で提出日付きの財務を取得して構築する（`app/ingestion/edinet.py` 雛形済、`.env.example` 参照）。
 有望なら機能完成後に J-Quants Standard(¥3,300/月) でPIT・廃止銘柄を補完し本検証。

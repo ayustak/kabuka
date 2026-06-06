@@ -80,6 +80,14 @@ def main() -> None:
     (DATA_DIR / "strategy_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    # シミュレーター用キャッシュ（月末株価・スコア・TOPIX水準）
+    px_me = prices.resample("ME").last()
+    px_me.to_parquet(DATA_DIR / "sim_px.parquet")
+    vt.to_parquet(DATA_DIR / "sim_scores.parquet")
+    topix_lvl = pd.read_parquet(DATA_DIR / "topix_index.parquet")["C"].resample("ME").last()
+    topix_lvl.to_frame("C").to_parquet(DATA_DIR / "sim_topix.parquet")
+    print("シミュレーター用キャッシュ書き出し: sim_px / sim_scores / sim_topix")
+
     sig = generate_value_signal(top_n=30)
     sig_obj = {"asof": sig.attrs.get("asof"), "holdings": sig.to_dict(orient="records")}
     (DATA_DIR / "signals_latest.json").write_text(

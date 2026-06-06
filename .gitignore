@@ -9,6 +9,8 @@ __pycache__/
 
 # データキャッシュ（再取得可能なため追跡しない）
 backend/data/*.parquet
+# ただしライブ推奨ログは実時間の記録で再生成不可 → 追跡する
+!backend/data/reco_log.parquet
 
 # 認証トークンのキャッシュ（秘密。絶対にコミットしない）
 backend/data/*.json

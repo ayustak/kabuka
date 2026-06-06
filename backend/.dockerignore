@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/*.parquet
+data/*.json
+!data/reco_log.parquet

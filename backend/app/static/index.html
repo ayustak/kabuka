@@ -19,15 +19,76 @@
   th:nth-child(2), td:nth-child(2) { text-align: left; }
   th { color: #8a93a6; font-weight: 500; } tr:hover td { background: #1c212b; }
   .note { color: #8a93a6; font-size: 12px; margin-top: 16px; line-height: 1.6; }
-  #chart { width: 100%; height: 260px; background:#171a21; border:1px solid #2a2f3a; border-radius:10px; }
+  #chart, #simChart { width: 100%; height: 240px; background:#171a21; border:1px solid #2a2f3a; border-radius:10px; }
   .err { color:#f87171; }
+  .sim { background:#171a21; border:1px solid #2a2f3a; border-radius:10px; padding:16px; }
+  .controls { display:flex; flex-wrap:wrap; gap:14px; align-items:flex-end; margin-bottom:14px; }
+  .controls label { display:flex; flex-direction:column; font-size:12px; color:#8a93a6; gap:4px; }
+  .controls select { background:#0f1115; color:#e6e6e6; border:1px solid #2a2f3a; border-radius:6px; padding:7px 10px; font-size:14px; }
+  #run { background:#4a7cff; color:#fff; border:none; border-radius:6px; padding:9px 18px; font-size:14px; cursor:pointer; }
+  #run:hover { background:#3a6cff; } #run:disabled { opacity:.5; }
+  .legend { font-size:12px; color:#8a93a6; margin:6px 0; } .legend b{color:#4a7cff;} .legend i{color:#8a93a6;font-style:normal;}
+  .tabs { display:flex; gap:8px; margin-bottom:12px; } .tab { background:#0f1115; color:#8a93a6; border:1px solid #2a2f3a; border-radius:6px; padding:7px 14px; cursor:pointer; font-size:13px; }
+  .tab.active { background:#4a7cff; color:#fff; border-color:#4a7cff; }
+  .btn-buy { background:#1f6f43; color:#fff; border:none; border-radius:5px; padding:4px 10px; cursor:pointer; font-size:12px; }
+  .btn-sell { background:#8a3030; color:#fff; border:none; border-radius:5px; padding:4px 10px; cursor:pointer; font-size:12px; }
+  .badge { background:#3a2a10; color:#f5c451; border-radius:4px; padding:2px 7px; font-size:11px; margin-right:4px; }
+  .conf-高 { color:#4ade80; } .conf-低 { color:#f5a14a; }
 </style>
 </head>
 <body>
 <header><h1>kabuka <small>日本株バリュー傾斜戦略ダッシュボード</small></h1></header>
 <div class="wrap">
   <div id="summary"></div>
-  <h2>累積リターン（戦略 vs TOPIX）</h2>
+
+  <h2>📋 ペーパートレード（仮想資金で実時間検証）<span class="note" id="paperAsof"></span></h2>
+  <div class="sim">
+    <div id="paperHead"></div>
+    <div id="paperPositions"></div>
+    <div id="paperInit" style="margin-top:10px;"></div>
+  </div>
+
+  <h2>📊 推奨の精度（ヒストリカル実績）</h2>
+  <div class="sim">
+    <div id="accuracy"></div>
+    <p class="note">過去データで「各月末にこの推奨を出していたら」の的中実績（非重複サンプル）。将来を保証しません。
+      ライブ実績は推奨を記録し続けると蓄積されます。</p>
+  </div>
+
+  <h2>🎯 買い候補（期間別）— 予測に基づく考察</h2>
+  <div class="sim">
+    <div class="tabs">
+      <button class="tab active" data-h="mid">中期 1〜3ヶ月</button>
+      <button class="tab" data-h="long">長期 6〜24ヶ月</button>
+      <button class="tab" data-h="short">短期 数日〜数週</button>
+    </div>
+    <div id="recoMeta" class="legend"></div>
+    <div id="reco"></div>
+  </div>
+
+  <h2>投資シミュレーター（実投資の前に試す）</h2>
+  <div class="sim">
+    <div class="controls">
+      <label>初期資金
+        <select id="cap">
+          <option value="1000000">100万円</option>
+          <option value="3000000" selected>300万円</option>
+          <option value="5000000">500万円</option>
+          <option value="10000000">1000万円</option>
+        </select></label>
+      <label>保有銘柄数
+        <select id="nh"><option>10</option><option selected>20</option><option>30</option><option>50</option></select></label>
+      <label>リバランス頻度
+        <select id="reb"><option value="M">毎月</option><option value="Q" selected>四半期</option><option value="H">半年</option><option value="Y">年1回</option></select></label>
+      <label>口座種別
+        <select id="acc"><option value="nisa" selected>NISA（非課税）</option><option value="taxable">課税口座</option></select></label>
+      <button id="run">シミュレーション実行</button>
+    </div>
+    <div id="simResult"></div>
+    <svg id="simChart" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg>
+  </div>
+
+  <h2>戦略バックテスト（参考・上位分位ロングオンリー）</h2>
   <svg id="chart" viewBox="0 0 1000 260" preserveAspectRatio="none"></svg>
   <h2>買い候補（value傾斜 上位30・等加重）<span id="asof" class="note"></span></h2>
   <div id="signals"></div>
@@ -44,6 +105,10 @@ async function load() {
     document.getElementById("footnote").textContent = "前提: " + s.universe + " / " + s.strategy + " / 期間 " + s.period + "。" + s.note;
     const sig = await (await fetch(API+"/signals/latest")).json();
     renderSignals(sig);
+    runSim();  // 既定条件で初期表示
+    loadPaper();
+    loadAccuracy();
+    loadReco("mid");
   } catch(e) {
     document.getElementById("summary").innerHTML =
       '<p class="err">データ未生成です。<code>python scripts/build_dashboard_data.py</code> を実行してください。</p>';
@@ -72,6 +137,117 @@ function renderChart(curve) {
     return `<path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>`;};
   document.getElementById("chart").innerHTML = line("topix","#8a93a6") + line("strategy","#4a7cff");
 }
+
+// ---- ペーパートレード ----
+let RECO_PRICES = {};  // code->推奨価格（買い時の株数目安）
+async function loadPaper() {
+  try {
+    const s = await (await fetch(API+"/paper/status")).json();
+    renderPaper(s);
+  } catch(e) { document.getElementById("paperHead").innerHTML='<p class="err">取得失敗</p>'; }
+}
+function renderPaper(s) {
+  if (!s.created_at) {
+    document.getElementById("paperHead").innerHTML = '<p class="note">まだ開始していません。仮想資金で始めましょう。</p>';
+    document.getElementById("paperPositions").innerHTML = '';
+    document.getElementById("paperInit").innerHTML =
+      '初期資金 <select id="icap"><option value="1000000">100万</option><option value="3000000" selected>300万</option><option value="5000000">500万</option><option value="10000000">1000万</option></select> <button id="run" onclick="initPaper()">ペーパートレード開始</button>';
+    return;
+  }
+  const pc = s.total_pnl>=0?"pos":"neg";
+  document.getElementById("paperHead").innerHTML = '<div class="cards">' +
+    card("総資産", yen(s.total_value)) + card("損益", (s.total_pnl>=0?"+":"")+yen(s.total_pnl)+" ("+s.total_pnl_pct+"%)", pc) +
+    card("現金", yen(s.cash)) + card("評価額", yen(s.market_value)) + '</div>';
+  document.getElementById("paperAsof").textContent = "  開始 "+s.created_at;
+  let t='<table><thead><tr><th>銘柄</th><th>期間</th><th>株数</th><th>取得</th><th>現値</th><th>損益</th><th>保有日</th><th>シグナル</th><th></th></tr></thead><tbody>';
+  if(!s.positions.length) t+='<tr><td colspan="9" class="note">保有なし。下の「買い候補」から追加できます。</td></tr>';
+  s.positions.forEach(p=>{
+    const sig = p.sell_signals.length? p.sell_signals.map(x=>`<span class="badge">${x}</span>`).join("") : '<span class="note">—</span>';
+    t+=`<tr><td style="text-align:left">${p.name}<br><span class="note">${p.code}</span></td><td>${p.horizon}</td><td>${p.shares}</td><td>${p.entry_price}</td><td>${p.current_price}</td><td class="${p.pnl>=0?'pos':'neg'}">${p.pnl_pct}%</td><td>${p.days_held}</td><td style="text-align:left">${sig}</td><td><button class="btn-sell" onclick="sellStock('${p.code}')">売る</button></td></tr>`;
+  });
+  document.getElementById("paperPositions").innerHTML = t+'</tbody></table>';
+  document.getElementById("paperInit").innerHTML = '<span class="note">※約定・評価はJ-Quants最新終値。売りシグナルは損切り/利確/順位脱落/期間切れの透明なルール。</span>';
+}
+async function initPaper(){ await fetch(API+"/paper/init",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({capital:+document.getElementById("icap").value})}); loadPaper(); }
+async function sellStock(code){ if(!confirm(code+" を売却しますか？")) return; const r=await (await fetch(API+"/paper/sell?code="+code+"&reason=manual",{method:"POST"})).json(); loadPaper(); }
+async function buyStock(code,name,horizon,price){
+  const sh=prompt(`${name}(${code}) を何株買いますか？（100株単位 / 推奨価格 約${price}円）`, "100");
+  if(!sh) return;
+  const r=await (await fetch(API+"/paper/buy",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code,shares:+sh,horizon,name})})).json();
+  if(r.detail){ alert(r.detail); return; }
+  loadPaper();
+}
+
+// ---- 推奨の精度（ヒストリカル） ----
+async function loadAccuracy() {
+  try {
+    const a = await (await fetch(API+"/tracking/accuracy?horizon=all")).json();
+    const order = ["long","mid","short"];
+    let html = '<table><thead><tr><th>期間</th><th>信頼度</th><th>サンプル</th><th>平均ﾘﾀｰﾝ</th><th>対TOPIX</th><th>勝率</th><th>IC</th><th>ICIR</th></tr></thead><tbody>';
+    order.forEach(h=>{ const r=a[h]; if(!r||!r.n_periods) return;
+      const ex=r.avg_excess_pct;
+      html += `<tr><td style="text-align:left">${r.label}</td><td class="conf-${r.confidence[0]}">${r.confidence}</td><td>${r.n_periods}</td><td>${r.avg_pick_return_pct}%</td><td class="${ex>0?'pos':'neg'}">${ex>0?'+':''}${ex}%</td><td>${r.win_rate_vs_topix_pct}%</td><td>${r.ic_mean}</td><td>${r.ic_ir??'-'}</td></tr>`;
+    });
+    document.getElementById("accuracy").innerHTML = html+'</tbody></table>';
+  } catch(e){ document.getElementById("accuracy").innerHTML='<p class="err">精度データ取得失敗</p>'; }
+}
+
+// ---- 期間別 買い候補 ----
+async function loadReco(h) {
+  const r = await (await fetch(API+`/recommendations?horizon=${h}&top_n=12`)).json();
+  document.getElementById("recoMeta").innerHTML =
+    `信頼度 <span class="conf-${r.confidence[0]}">${r.confidence}</span>　根拠: ${r.basis}　｜　売り: 損切り${r.sell_rules.stop_loss_pct.toFixed(0)}% / ${r.sell_rules.take_profit_pct?'利確'+r.sell_rules.take_profit_pct.toFixed(0)+'% / ':''}${r.sell_rules.rank_exit} / ${r.sell_rules.time_stop}　｜　基準日 ${r.asof}`;
+  let t='<table><thead><tr><th>#</th><th>銘柄</th><th>コード</th><th>スコア</th><th>株価</th><th>損切り目安</th><th>ボラ</th><th></th></tr></thead><tbody>';
+  r.picks.forEach((p,i)=>{ t+=`<tr><td>${i+1}</td><td style="text-align:left">${p.name}</td><td>${p.code}</td><td>${p.score}</td><td>${p.price}</td><td>${p.stop_loss_price}</td><td>${p.recent_vol_pct}%</td><td><button class="btn-buy" onclick="buyStock('${p.code}','${p.name}','${h}',${p.price})">買う</button></td></tr>`; });
+  document.getElementById("reco").innerHTML = t+'</tbody></table>';
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active")); b.classList.add("active"); loadReco(b.dataset.h);
+}));
+
+async function runSim() {
+  const btn=document.getElementById("run"); btn.disabled=true; btn.textContent="計算中…";
+  const q = new URLSearchParams({
+    initial_capital: document.getElementById("cap").value,
+    n_holdings: document.getElementById("nh").value,
+    rebalance: document.getElementById("reb").value,
+    account: document.getElementById("acc").value,
+  });
+  try {
+    const r = await (await fetch(API+"/simulate?"+q)).json();
+    renderSimResult(r); renderSimChart(r.equity_curve);
+  } catch(e) {
+    document.getElementById("simResult").innerHTML='<p class="err">計算に失敗しました。</p>';
+  }
+  btn.disabled=false; btn.textContent="シミュレーション実行";
+}
+
+function yen(v){ return "¥"+v.toLocaleString(); }
+
+function renderSimResult(r) {
+  const ex = r.excess_pct;
+  document.getElementById("simResult").innerHTML = '<div class="cards">' +
+    card("最終資産", yen(r.final_value), r.profit>0?"pos":"neg") +
+    card("損益", (r.profit>0?"+":"")+yen(r.profit), r.profit>0?"pos":"neg") +
+    card("年率(CAGR)", r.cagr_pct+"%") +
+    card("対TOPIX超過", (ex>0?"+":"")+ex+"%", ex>0?"pos":"neg") +
+    card("最大DD", r.max_dd_pct+"%","neg") +
+    card("支払った税", yen(r.total_tax), r.total_tax>0?"neg":"") +
+    card("平均保有銘柄", r.avg_holdings) +
+    card("TOPIXなら", yen(r.topix_final_value)) +
+  '</div><p class="legend"><b>━ あなたの戦略</b>　<i>━ TOPIX(同額投資)</i>　期間 '+r.period+'</p>';
+}
+
+function renderSimChart(curve) {
+  if(!curve||!curve.length) return;
+  const W=1000,H=240,pad=10;
+  const vals=curve.flatMap(c=>[c.portfolio,c.topix]);
+  const lo=Math.min(...vals), hi=Math.max(...vals);
+  const X=i=>pad+(W-2*pad)*i/(curve.length-1), Y=v=>H-pad-(H-2*pad)*(v-lo)/(hi-lo||1);
+  const line=(k,col)=>`<path d="${curve.map((c,i)=>(i?"L":"M")+X(i).toFixed(1)+" "+Y(c[k]).toFixed(1)).join(" ")}" fill="none" stroke="${col}" stroke-width="2"/>`;
+  document.getElementById("simChart").innerHTML = line("topix","#8a93a6")+line("portfolio","#4a7cff");
+}
+document.getElementById("run").addEventListener("click", runSim);
 
 function renderSignals(sig) {
   document.getElementById("asof").textContent = "  as of " + (sig.asof||"");

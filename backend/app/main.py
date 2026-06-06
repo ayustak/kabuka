@@ -26,6 +26,13 @@ app.add_middleware(
 
 app.include_router(router, prefix="/api")
 
+
+@app.on_event("startup")
+def _startup() -> None:
+    # 日次データ更新スケジューラ（KABUKA_ENABLE_SCHEDULER=1 のとき起動）
+    from app.scheduler.jobs import maybe_start
+    maybe_start()
+
 _STATIC = Path(__file__).resolve().parent / "static"
 
 

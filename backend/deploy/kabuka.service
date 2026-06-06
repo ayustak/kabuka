@@ -1,0 +1,20 @@
+# kabuka を VPS で常時稼働させる systemd ユニット。
+# 配置: /etc/systemd/system/kabuka.service
+# 前提: リポジトリを /opt/kabuka に置き、/opt/kabuka/.venv に依存導入済み。
+[Unit]
+Description=kabuka API + 日次スケジューラ
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=kabuka
+WorkingDirectory=/opt/kabuka/backend
+EnvironmentFile=/opt/kabuka/backend/.env
+Environment=KABUKA_ENABLE_SCHEDULER=1
+ExecStart=/opt/kabuka/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
