@@ -43,6 +43,8 @@ jobs:
         working-directory: backend
         run: python scripts/export_web.py
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true   # Pagesを自動で有効化（手動設定不要に）
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web
