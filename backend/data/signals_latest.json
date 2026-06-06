@@ -1,0 +1,275 @@
+{
+  "asof": "2026-06-30",
+  "holdings": [
+    {
+      "code": "14140",
+      "name": "ショーボンドホールディングス",
+      "score": 0.9208,
+      "value_bp": 1.662,
+      "value_ep": 0.2222,
+      "reversal_1m": 0.0283,
+      "weight": 0.0333
+    },
+    {
+      "code": "19250",
+      "name": "大和ハウス工業",
+      "score": 0.8755,
+      "value_bp": 1.116,
+      "value_ep": 0.1268,
+      "reversal_1m": 0.0336,
+      "weight": 0.0333
+    },
+    {
+      "code": "19280",
+      "name": "積水ハウス",
+      "score": 0.8528,
+      "value_bp": 1.03,
+      "value_ep": 0.1093,
+      "reversal_1m": 0.0458,
+      "weight": 0.0333
+    },
+    {
+      "code": "19110",
+      "name": "住友林業",
+      "score": 0.8415,
+      "value_bp": 1.275,
+      "value_ep": 0.1339,
+      "reversal_1m": 0.0135,
+      "weight": 0.0333
+    },
+    {
+      "code": "25020",
+      "name": "アサヒグループホールディングス",
+      "score": 0.8264,
+      "value_bp": 1.204,
+      "value_ep": 0.0856,
+      "reversal_1m": 0.032,
+      "weight": 0.0333
+    },
+    {
+      "code": "13330",
+      "name": "Ｕｍｉｏｓ",
+      "score": 0.8113,
+      "value_bp": 1.302,
+      "value_ep": 0.1163,
+      "reversal_1m": 0.0083,
+      "weight": 0.0333
+    },
+    {
+      "code": "18200",
+      "name": "西松建設",
+      "score": 0.7321,
+      "value_bp": 0.923,
+      "value_ep": 0.1076,
+      "reversal_1m": 0.0148,
+      "weight": 0.0333
+    },
+    {
+      "code": "20020",
+      "name": "日清製粉グループ本社",
+      "score": 0.6868,
+      "value_bp": 0.977,
+      "value_ep": 0.0611,
+      "reversal_1m": 0.0381,
+      "weight": 0.0333
+    },
+    {
+      "code": "17190",
+      "name": "安藤・間",
+      "score": 0.683,
+      "value_bp": 0.76,
+      "value_ep": 0.0941,
+      "reversal_1m": 0.0307,
+      "weight": 0.0333
+    },
+    {
+      "code": "16050",
+      "name": "ＩＮＰＥＸ",
+      "score": 0.6792,
+      "value_bp": 1.105,
+      "value_ep": 0.0849,
+      "reversal_1m": -0.0222,
+      "weight": 0.0333
+    },
+    {
+      "code": "18600",
+      "name": "戸田建設",
+      "score": 0.6604,
+      "value_bp": 0.867,
+      "value_ep": 0.0764,
+      "reversal_1m": 0.0218,
+      "weight": 0.0333
+    },
+    {
+      "code": "13320",
+      "name": "ニッスイ",
+      "score": 0.6604,
+      "value_bp": 0.787,
+      "value_ep": 0.0701,
+      "reversal_1m": 0.0531,
+      "weight": 0.0333
+    },
+    {
+      "code": "18780",
+      "name": "大東建託",
+      "score": 0.6453,
+      "value_bp": 0.523,
+      "value_ep": 0.098,
+      "reversal_1m": 0.079,
+      "weight": 0.0333
+    },
+    {
+      "code": "18080",
+      "name": "長谷工コーポレーション",
+      "score": 0.6189,
+      "value_bp": 0.801,
+      "value_ep": 0.0706,
+      "reversal_1m": 0.0218,
+      "weight": 0.0333
+    },
+    {
+      "code": "22820",
+      "name": "日本ハム",
+      "score": 0.6038,
+      "value_bp": 0.96,
+      "value_ep": 0.0595,
+      "reversal_1m": 0.0271,
+      "weight": 0.0333
+    },
+    {
+      "code": "18020",
+      "name": "大林組",
+      "score": 0.5925,
+      "value_bp": 0.585,
+      "value_ep": 0.0802,
+      "reversal_1m": 0.0358,
+      "weight": 0.0333
+    },
+    {
+      "code": "22010",
+      "name": "森永製菓",
+      "score": 0.5811,
+      "value_bp": 0.688,
+      "value_ep": 0.0839,
+      "reversal_1m": 0.0133,
+      "weight": 0.0333
+    },
+    {
+      "code": "23310",
+      "name": "ＡＬＳＯＫ",
+      "score": 0.5811,
+      "value_bp": 0.735,
+      "value_ep": 0.0607,
+      "reversal_1m": 0.0477,
+      "weight": 0.0333
+    },
+    {
+      "code": "18030",
+      "name": "清水建設",
+      "score": 0.5774,
+      "value_bp": 0.573,
+      "value_ep": 0.0703,
+      "reversal_1m": 0.0643,
+      "weight": 0.0333
+    },
+    {
+      "code": "14170",
+      "name": "ミライト・ワン",
+      "score": 0.5736,
+      "value_bp": 0.81,
+      "value_ep": 0.0655,
+      "reversal_1m": 0.011,
+      "weight": 0.0333
+    },
+    {
+      "code": "19630",
+      "name": "日揮ホールディングス",
+      "score": 0.5509,
+      "value_bp": 0.671,
+      "value_ep": 0.0647,
+      "reversal_1m": 0.0309,
+      "weight": 0.0333
+    },
+    {
+      "code": "18010",
+      "name": "大成建設",
+      "score": 0.5509,
+      "value_bp": 0.438,
+      "value_ep": 0.0785,
+      "reversal_1m": 0.0539,
+      "weight": 0.0333
+    },
+    {
+      "code": "25030",
+      "name": "キリンホールディングス",
+      "score": 0.5396,
+      "value_bp": 0.609,
+      "value_ep": 0.0619,
+      "reversal_1m": 0.0417,
+      "weight": 0.0333
+    },
+    {
+      "code": "19590",
+      "name": "クラフティア",
+      "score": 0.5358,
+      "value_bp": 0.563,
+      "value_ep": 0.0647,
+      "reversal_1m": 0.0657,
+      "weight": 0.0333
+    },
+    {
+      "code": "22120",
+      "name": "山崎製パン",
+      "score": 0.5283,
+      "value_bp": 0.761,
+      "value_ep": 0.0607,
+      "reversal_1m": 0.0239,
+      "weight": 0.0333
+    },
+    {
+      "code": "18930",
+      "name": "五洋建設",
+      "score": 0.5094,
+      "value_bp": 0.428,
+      "value_ep": 0.0715,
+      "reversal_1m": 0.0466,
+      "weight": 0.0333
+    },
+    {
+      "code": "18120",
+      "name": "鹿島建設",
+      "score": 0.483,
+      "value_bp": 0.546,
+      "value_ep": 0.0603,
+      "reversal_1m": 0.0607,
+      "weight": 0.0333
+    },
+    {
+      "code": "24320",
+      "name": "ディー・エヌ・エー",
+      "score": 0.483,
+      "value_bp": 0.81,
+      "value_ep": 0.0585,
+      "reversal_1m": -0.0013,
+      "weight": 0.0333
+    },
+    {
+      "code": "22670",
+      "name": "ヤクルト本社",
+      "score": 0.4792,
+      "value_bp": 0.789,
+      "value_ep": 0.0545,
+      "reversal_1m": 0.0194,
+      "weight": 0.0333
+    },
+    {
+      "code": "22060",
+      "name": "江崎グリコ",
+      "score": 0.4377,
+      "value_bp": 0.828,
+      "value_ep": 0.014,
+      "reversal_1m": 0.0321,
+      "weight": 0.0333
+    }
+  ]
+}
