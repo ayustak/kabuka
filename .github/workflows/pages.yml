@@ -1,0 +1,47 @@
+name: Pages デプロイ
+
+# 日次パイプライン完了後（最新データ反映後）／web変更のpush／手動 で実行。
+on:
+  workflow_run:
+    workflows: ["kabuka 日次パイプライン"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "backend/scripts/export_web.py"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        working-directory: backend
+        run: pip install -e .
+      - name: Build web data（推奨/精度/最新株価/シミュ結果/解説をJSON・HTML化）
+        working-directory: backend
+        run: python scripts/export_web.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deploy
+        uses: actions/deploy-pages@v4

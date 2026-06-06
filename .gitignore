@@ -23,3 +23,7 @@ backend/data/jquants_token.json
 
 # Claude Code のローカル個人設定（絶対パス等を含むため共有しない）
 .claude/settings.local.json
+
+# Pages用の生成物（CIで都度生成するため追跡しない）
+web/data/
+web/about.html
