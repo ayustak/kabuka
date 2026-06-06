@@ -34,28 +34,67 @@
   .btn-sell { background:#8a3030; color:#fff; border:none; border-radius:5px; padding:4px 10px; cursor:pointer; font-size:12px; }
   .badge { background:#3a2a10; color:#f5c451; border-radius:4px; padding:2px 7px; font-size:11px; margin-right:4px; }
   .conf-高 { color:#4ade80; } .conf-低 { color:#f5a14a; }
+  .navlink { color:#9ec1ff; font-size:13px; text-decoration:none; } .navlink:hover{text-decoration:underline;}
+  .intro { background:#171a21; border:1px solid #2a2f3a; border-left:4px solid #4a7cff; border-radius:8px;
+           padding:14px 16px; margin-bottom:22px; font-size:14px; line-height:1.8; }
+  .intro .warn { display:block; color:#f5c451; margin-top:6px; font-size:13px; }
+  .intro a { color:#6aa3ff; margin-left:8px; }
+  .lead { color:#aeb6c5; font-size:13.5px; margin:-4px 0 14px; line-height:1.7; }
+  details.glossary { background:#171a21; border:1px solid #2a2f3a; border-radius:8px; padding:10px 16px; margin:22px 0; }
+  details.glossary summary { cursor:pointer; color:#cdd3df; font-weight:600; }
+  details.glossary dl { font-size:13px; } details.glossary dt { color:#9ec1ff; margin-top:10px; font-weight:600; }
+  details.glossary dd { margin:2px 0 0; color:#aeb6c5; }
 </style>
 </head>
 <body>
-<header><h1>kabuka <small>日本株バリュー傾斜戦略ダッシュボード</small></h1></header>
+<header>
+  <h1>kabuka <small>日本株のやさしい売買アシスタント</small></h1>
+  <a class="navlink" href="/about">📖 このアプリの仕組み・情報源を見る</a>
+</header>
 <div class="wrap">
+  <div class="intro">
+    <b>このアプリでできること：</b> 日本の主要株から「これから上がりやすそうな割安な株」を提示し、
+    <b>仮想のお金で売買を練習（ペーパートレード）</b>できます。本物のお金を使う前に試せます。
+    <span class="warn">⚠️ 数字は過去の実績にもとづく目安で、将来の利益を保証しません。投資は自己責任で。</span>
+    <a href="/about">→ 仕組みのくわしい解説</a>
+  </div>
+
+  <details class="glossary">
+    <summary>📚 用語のかんたん解説（クリックで開く）</summary>
+    <dl>
+      <dt>TOPIX（トピックス）／市場平均</dt><dd>東証の株全体の動きを表す指数。「これより儲かったか」を比べる基準。</dd>
+      <dt>市場平均との差（対TOPIX超過）</dt><dd>市場平均より何％多く（少なく）儲かったか。プラスなら市場に勝った。</dd>
+      <dt>勝率</dt><dd>市場平均に勝てた月（年）の割合。高いほど安定して勝っている。</dd>
+      <dt>シャープ</dt><dd>値動きの荒さ（リスク）に対してどれだけ効率よく儲けたか。高いほど良い。1前後でプロ級。</dd>
+      <dt>最大ドローダウン（最大DD）</dt><dd>過去いちばん下落したときの落ち込み幅。-30%なら一時的に3割減った時期があった、という意味。</dd>
+      <dt>バリュー（割安）</dt><dd>利益や資産に対して株価が安い状態。日本株では長い目で見て勝ちやすい傾向。</dd>
+      <dt>順位脱落（売り時サイン）</dt><dd>おすすめ上位から外れたら売る、という乗り換えの合図。</dd>
+      <dt>NISA</dt><dd>利益に税金がかからない制度。頻繁な売買でも税で損しにくく、このアプリの戦略と相性が良い。</dd>
+      <dt>ペーパートレード</dt><dd>仮想のお金で売買を練習すること。本物の損失なしに腕試しできる。</dd>
+    </dl>
+  </details>
   <div id="summary"></div>
 
-  <h2>📋 ペーパートレード（仮想資金で実時間検証）<span class="note" id="paperAsof"></span></h2>
+  <h2>📋 ペーパートレード（仮想資金で練習）<span class="note" id="paperAsof"></span></h2>
+  <p class="lead">仮想のお金で売買を記録して練習できます。下の「買い候補」から「買う」を押すと最新株価で仮想購入。
+    日々の損益と<b>売り時サイン</b>が出ます。本物のお金を使う前の練習・検証用です。</p>
   <div class="sim">
     <div id="paperHead"></div>
     <div id="paperPositions"></div>
     <div id="paperInit" style="margin-top:10px;"></div>
   </div>
 
-  <h2>📊 推奨の精度（ヒストリカル実績）</h2>
+  <h2>📊 これまでの的中ぐあい</h2>
+  <p class="lead">「過去に毎月この推奨を出していたら、市場平均(TOPIX)にどれだけ勝てたか」の実績です。
+    <b>勝率＝市場平均に勝った月の割合</b>。中期がいちばん安定、短期は実験的で五分五分です。</p>
   <div class="sim">
     <div id="accuracy"></div>
-    <p class="note">過去データで「各月末にこの推奨を出していたら」の的中実績（非重複サンプル）。将来を保証しません。
-      ライブ実績は推奨を記録し続けると蓄積されます。</p>
+    <p class="note">※過去データにもとづく目安で、将来を保証しません。</p>
   </div>
 
-  <h2>🎯 買い候補（期間別）— 予測に基づく考察</h2>
+  <h2>🎯 買い候補（短期・中期・長期）</h2>
+  <p class="lead">割安さなどを点数化して上位を提示します。同じ業種に偏らないよう分散済み。
+    各銘柄に<b>損切りの目安価格</b>も表示。期間タブで切り替えできます（中期がおすすめ）。</p>
   <div class="sim">
     <div class="tabs">
       <button class="tab active" data-h="mid">中期 1〜3ヶ月</button>
@@ -183,10 +222,10 @@ async function loadAccuracy() {
   try {
     const a = await (await fetch(API+"/tracking/accuracy?horizon=all")).json();
     const order = ["long","mid","short"];
-    let html = '<table><thead><tr><th>期間</th><th>信頼度</th><th>サンプル</th><th>平均ﾘﾀｰﾝ</th><th>対TOPIX</th><th>勝率</th><th>IC</th><th>ICIR</th></tr></thead><tbody>';
+    let html = '<table><thead><tr><th>期間</th><th>信頼度</th><th>平均リターン</th><th>市場平均との差</th><th>勝率<br><span class="note">市場平均に勝った割合</span></th></tr></thead><tbody>';
     order.forEach(h=>{ const r=a[h]; if(!r||!r.n_periods) return;
       const ex=r.avg_excess_pct;
-      html += `<tr><td style="text-align:left">${r.label}</td><td class="conf-${r.confidence[0]}">${r.confidence}</td><td>${r.n_periods}</td><td>${r.avg_pick_return_pct}%</td><td class="${ex>0?'pos':'neg'}">${ex>0?'+':''}${ex}%</td><td>${r.win_rate_vs_topix_pct}%</td><td>${r.ic_mean}</td><td>${r.ic_ir??'-'}</td></tr>`;
+      html += `<tr><td style="text-align:left">${r.label}</td><td class="conf-${r.confidence[0]}">${r.confidence}</td><td>${r.avg_pick_return_pct}%</td><td class="${ex>0?'pos':'neg'}">${ex>0?'+':''}${ex}%</td><td>${r.win_rate_vs_topix_pct}%</td></tr>`;
     });
     document.getElementById("accuracy").innerHTML = html+'</tbody></table>';
   } catch(e){ document.getElementById("accuracy").innerHTML='<p class="err">精度データ取得失敗</p>'; }

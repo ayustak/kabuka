@@ -12,6 +12,7 @@ dependencies = [
     "fastapi>=0.115",  # API層
     "uvicorn>=0.30",   # ASGIサーバ
     "apscheduler>=3.10",  # 日次スケジューラ
+    "markdown>=3.5",   # 解説ページ(about.md)のHTML描画
 ]
 
 [project.optional-dependencies]
