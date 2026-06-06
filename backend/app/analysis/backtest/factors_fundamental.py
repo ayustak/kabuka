@@ -75,6 +75,50 @@ def build_fundamental_factors(
     return panels
 
 
+def build_fundamental_factors_jq(
+    daily_close: pd.DataFrame, stmt: pd.DataFrame
+) -> dict[str, pd.DataFrame]:
+    """J-Quants /fins/summary スキーマから value/quality を構築（PIT: disc_date<=月末）。
+
+    daily_close: J-Quants調整後終値（columns=5桁code）。
+    stmt: jquants_collect.collect_statements() の連結FYパネル
+          （code, disc_date, net_income, equity, sales, total_assets, equity_ratio, bps, shares_fy）。
+    """
+    me = daily_close.resample("ME").last()
+    month_ends = me.index
+    stmt = stmt.dropna(subset=["disc_date"]).sort_values("disc_date")
+
+    names = ["value_bp", "value_ep", "quality_roe", "quality_margin", "quality_equity_ratio"]
+    panels = {n: pd.DataFrame(index=month_ends, columns=me.columns, dtype=float) for n in names}
+
+    for code, g in stmt.groupby("code"):
+        if code not in me.columns:
+            continue
+        g = g.sort_values("disc_date")
+        idx = g["disc_date"].searchsorted(month_ends, side="right") - 1
+        for i, t in enumerate(month_ends):
+            j = idx[i]
+            if j < 0:
+                continue
+            row = g.iloc[j]
+            price = me.at[t, code]
+            if not np.isfinite(price) or price <= 0:
+                continue
+            bps, ni, eq = row.get("bps"), row.get("net_income"), row.get("equity")
+            sales, shares, eqar = row.get("sales"), row.get("shares_fy"), row.get("equity_ratio")
+            if np.isfinite(bps):
+                panels["value_bp"].at[t, code] = bps / price            # B/P = BPS/株価
+            if np.isfinite(ni) and np.isfinite(shares) and shares > 0:
+                panels["value_ep"].at[t, code] = (ni / shares) / price  # E/P = EPS/株価
+            if np.isfinite(ni) and np.isfinite(eq) and eq != 0:
+                panels["quality_roe"].at[t, code] = ni / eq
+            if np.isfinite(ni) and np.isfinite(sales) and sales != 0:
+                panels["quality_margin"].at[t, code] = ni / sales
+            if np.isfinite(eqar):
+                panels["quality_equity_ratio"].at[t, code] = eqar
+    return panels
+
+
 def build_value_quality_composite(panels: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """value系・quality系をクロスセクション順位平均で合成した総合スコア。"""
     parts = [p.rank(axis=1, pct=True) for p in panels.values()]

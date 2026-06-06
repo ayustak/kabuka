@@ -14,8 +14,14 @@
 - [x] Deflated Sharpe / コスト感度スイープ実装 → 最良でもDSR=0.53（αは偶然を否定できない）
 - [ ] EDINET API で財務取得 → value/quality ファクター追加（日本で効くとされる本命の軸）★次
       ※`app/ingestion/edinet.py` 雛形済。無料APIキーを `.env` に設定すれば疎通可
-- [ ] Purged CV（重複ホライズン版）でハイパラ探索のリークを排除
-- [ ] 有望なら J-Quants Standard で PIT・廃止銘柄を補完して生存者バイアス込み再検証
+- [x] Purged CV（重複ホライズン版・embargo）でLightGBM評価 → 単純なvalue傾斜合成に負け（複雑化は逆効果）
+- [x] J-Quants Standard で PIT・廃止銘柄を補完し生存者バイアス除去版を検証（TOPIX500・真TOPIX比較）
+- [x] 税引後・実執行・100株単位制約の到達点分析（NISA +3.2%/年 / 課税口座 +0.8%/年）
+- [x] value傾斜の買い候補シグナル生成（`app/signals/`）
+- [x] FastAPI ダッシュボード（`/api/strategy/summary`, `/api/signals/latest` ＋ 最小フロント）
+
+**結論**: バリュー傾斜のシンプル戦略が本命。対TOPIX超過はコスト後でNISA +3.2%/年（課税口座は税で +0.8%/年）。
+LightGBMは効果薄。→ 実運用するなら NISA・低回転・運用額¥5M+ が条件。
 
 **完了の定義**: 無料データで対TOPIXαの有無に一次判断がつく（Go/No-Go の材料が出る）。
 

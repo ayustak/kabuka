@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kabuka ダッシュボード</title>
+<style>
+  body { font-family: -apple-system, "Hiragino Sans", sans-serif; margin: 0; background: #0f1115; color: #e6e6e6; }
+  header { padding: 20px 28px; background: #171a21; border-bottom: 1px solid #2a2f3a; }
+  h1 { margin: 0; font-size: 20px; } h1 small { color: #8a93a6; font-weight: normal; font-size: 13px; }
+  .wrap { padding: 24px 28px; max-width: 1100px; margin: 0 auto; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .card { background: #171a21; border: 1px solid #2a2f3a; border-radius: 10px; padding: 14px 16px; }
+  .card .label { color: #8a93a6; font-size: 12px; } .card .val { font-size: 22px; font-weight: 600; margin-top: 4px; }
+  .pos { color: #4ade80; } .neg { color: #f87171; }
+  h2 { font-size: 15px; color: #cdd3df; border-left: 3px solid #4a7cff; padding-left: 8px; margin: 26px 0 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid #232833; }
+  th:nth-child(2), td:nth-child(2) { text-align: left; }
+  th { color: #8a93a6; font-weight: 500; } tr:hover td { background: #1c212b; }
+  .note { color: #8a93a6; font-size: 12px; margin-top: 16px; line-height: 1.6; }
+  #chart { width: 100%; height: 260px; background:#171a21; border:1px solid #2a2f3a; border-radius:10px; }
+  .err { color:#f87171; }
+</style>
+</head>
+<body>
+<header><h1>kabuka <small>日本株バリュー傾斜戦略ダッシュボード</small></h1></header>
+<div class="wrap">
+  <div id="summary"></div>
+  <h2>累積リターン（戦略 vs TOPIX）</h2>
+  <svg id="chart" viewBox="0 0 1000 260" preserveAspectRatio="none"></svg>
+  <h2>買い候補（value傾斜 上位30・等加重）<span id="asof" class="note"></span></h2>
+  <div id="signals"></div>
+  <p class="note" id="footnote"></p>
+</div>
+<script>
+const API = location.origin + "/api";
+const fmt = v => (v>0?"+":"") + v + "%";
+
+async function load() {
+  try {
+    const s = await (await fetch(API+"/strategy/summary")).json();
+    renderSummary(s); renderChart(s.equity_curve);
+    document.getElementById("footnote").textContent = "前提: " + s.universe + " / " + s.strategy + " / 期間 " + s.period + "。" + s.note;
+    const sig = await (await fetch(API+"/signals/latest")).json();
+    renderSignals(sig);
+  } catch(e) {
+    document.getElementById("summary").innerHTML =
+      '<p class="err">データ未生成です。<code>python scripts/build_dashboard_data.py</code> を実行してください。</p>';
+  }
+}
+
+function card(label, val, cls="") { return `<div class="card"><div class="label">${label}</div><div class="val ${cls}">${val}</div></div>`; }
+
+function renderSummary(s) {
+  document.getElementById("summary").innerHTML = '<div class="cards">' +
+    card("戦略 年率(コスト後)", s.ann_return_pct+"%") +
+    card("シャープ", s.sharpe) +
+    card("最大DD", s.max_dd_pct+"%", "neg") +
+    card("対TOPIX超過 (NISA)", fmt(s.excess_nisa_pct), s.excess_nisa_pct>0?"pos":"neg") +
+    card("対TOPIX超過 (課税)", fmt(s.excess_taxable_pct), s.excess_taxable_pct>0?"pos":"neg") +
+    card("TOPIX CAGR", s.cagr_topix_pct+"%") +
+  '</div>';
+}
+
+function renderChart(curve) {
+  if(!curve || !curve.length) return;
+  const W=1000,H=260,pad=8;
+  const xs=curve.map((_,i)=>i), max=Math.max(...curve.map(c=>Math.max(c.strategy,c.topix)));
+  const X=i=>pad+(W-2*pad)*i/(curve.length-1), Y=v=>H-pad-(H-2*pad)*(v-0.8)/(max-0.8);
+  const line=(key,col)=>{let d=curve.map((c,i)=>(i?"L":"M")+X(i).toFixed(1)+" "+Y(c[key]).toFixed(1)).join(" ");
+    return `<path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>`;};
+  document.getElementById("chart").innerHTML = line("topix","#8a93a6") + line("strategy","#4a7cff");
+}
+
+function renderSignals(sig) {
+  document.getElementById("asof").textContent = "  as of " + (sig.asof||"");
+  const h = sig.holdings||[];
+  let t = '<table><thead><tr><th>順位</th><th>銘柄</th><th>コード</th><th>スコア</th><th>B/P</th><th>益回り</th><th>比率</th></tr></thead><tbody>';
+  h.forEach((r,i)=>{ t += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.code}</td><td>${r.score}</td><td>${r.value_bp??"-"}</td><td>${r.value_ep??"-"}</td><td>${(r.weight*100).toFixed(1)}%</td></tr>`; });
+  document.getElementById("signals").innerHTML = t + '</tbody></table>';
+}
+load();
+</script>
+</body>
+</html>

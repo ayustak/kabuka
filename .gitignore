@@ -10,5 +10,9 @@ __pycache__/
 # データキャッシュ（再取得可能なため追跡しない）
 backend/data/*.parquet
 
+# 認証トークンのキャッシュ（秘密。絶対にコミットしない）
+backend/data/*.json
+backend/data/jquants_token.json
+
 # Claude Code のローカル個人設定（絶対パス等を含むため共有しない）
 .claude/settings.local.json

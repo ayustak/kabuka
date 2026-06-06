@@ -9,12 +9,14 @@ dependencies = [
     "numpy>=1.26",
     "scipy>=1.11",     # pandas の Spearman相関(IC計算)に必要
     "pyarrow>=15",     # parquetキャッシュ
+    "fastapi>=0.115",  # API層
+    "uvicorn>=0.30",   # ASGIサーバ
 ]
 
 [project.optional-dependencies]
-# 後続フェーズで追加: API層・モデル・財務取得
-api = ["fastapi", "uvicorn", "sqlalchemy"]
+# LightGBM はmacOSで `brew install libomp` が必要
 model = ["lightgbm", "scikit-learn", "optuna"]
+db = ["sqlalchemy"]
 
 [tool.setuptools.packages.find]
 where = ["."]
