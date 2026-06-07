@@ -5,35 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kabuka — 日本株のやさしい売買アシスタント</title>
 <style>
-  body { font-family:-apple-system,"Hiragino Sans",sans-serif; margin:0; background:#0f1115; color:#e6e6e6; }
-  header { padding:18px 24px; background:#171a21; border-bottom:1px solid #2a2f3a; }
-  h1 { margin:0; font-size:20px; } h1 small{color:#8a93a6;font-weight:normal;font-size:13px;}
-  .navlink { color:#9ec1ff; font-size:13px; }
-  .wrap { padding:22px 24px; max-width:1080px; margin:0 auto; }
-  .intro { background:#171a21; border:1px solid #2a2f3a; border-left:4px solid #4a7cff; border-radius:8px; padding:14px 16px; margin-bottom:20px; font-size:14px; line-height:1.8; }
-  .intro .warn{display:block;color:#f5c451;margin-top:6px;font-size:13px;}
-  h2 { font-size:16px; color:#cdd3df; border-left:3px solid #4a7cff; padding-left:8px; margin:30px 0 6px; }
-  .lead { color:#aeb6c5; font-size:13.5px; margin:0 0 14px; line-height:1.7; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
-  .card { background:#171a21; border:1px solid #2a2f3a; border-radius:10px; padding:12px 14px; }
-  .card .label{color:#8a93a6;font-size:12px;} .card .val{font-size:20px;font-weight:600;margin-top:4px;}
+  body{font-family:-apple-system,"Hiragino Sans",sans-serif;margin:0;background:#0f1115;color:#e6e6e6;}
+  header{padding:16px 22px;background:#171a21;border-bottom:1px solid #2a2f3a;}
+  h1{margin:0;font-size:19px;} h1 small{color:#8a93a6;font-weight:normal;font-size:13px;}
+  .navlink{color:#9ec1ff;font-size:13px;}
+  .wrap{padding:20px 22px;max-width:1000px;margin:0 auto;}
+  .intro{background:#171a21;border:1px solid #2a2f3a;border-left:4px solid #4a7cff;border-radius:8px;padding:12px 15px;margin-bottom:18px;font-size:13.5px;line-height:1.75;}
+  .intro .warn{display:block;color:#f5c451;margin-top:5px;font-size:12.5px;}
+  h2{font-size:17px;color:#e6e6e6;margin:26px 0 4px;} h2 .hint{font-size:12px;color:#8a93a6;font-weight:normal;margin-left:8px;}
+  .lead{color:#aeb6c5;font-size:13px;margin:0 0 12px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px;}
+  .card{background:#171a21;border:1px solid #2a2f3a;border-radius:10px;padding:11px 13px;}
+  .card .label{color:#8a93a6;font-size:12px;} .card .val{font-size:19px;font-weight:600;margin-top:3px;}
   .pos{color:#4ade80;} .neg{color:#f87171;}
-  table{width:100%;border-collapse:collapse;font-size:13px;} th,td{padding:7px 9px;border-bottom:1px solid #232833;text-align:right;}
-  th:first-child,td:first-child{text-align:left;} th{color:#8a93a6;font-weight:500;}
-  .panel{background:#171a21;border:1px solid #2a2f3a;border-radius:10px;padding:16px;}
-  .tabs{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;} .tab{background:#0f1115;color:#8a93a6;border:1px solid #2a2f3a;border-radius:6px;padding:7px 13px;cursor:pointer;font-size:13px;}
-  .tab.active{background:#4a7cff;color:#fff;border-color:#4a7cff;}
-  select{background:#0f1115;color:#e6e6e6;border:1px solid #2a2f3a;border-radius:6px;padding:7px 10px;font-size:14px;}
+  .panel{background:#171a21;border:1px solid #2a2f3a;border-radius:10px;padding:14px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;} th,td{padding:8px 8px;border-bottom:1px solid #232833;text-align:right;}
+  th:first-child,td:first-child{text-align:left;} th{color:#8a93a6;font-weight:500;font-size:12px;}
+  .hold-row{cursor:pointer;} .hold-row:hover td{background:#1c212b;}
+  .tag{font-size:11px;border-radius:4px;padding:2px 8px;}
+  .tag-hold{background:#16361f;color:#7fe3a0;} .tag-sell{background:#3a1414;color:#ff9a9a;}
+  .detail td{background:#13161d;}
+  .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:6px 0 10px;}
+  .metric{background:#1c212b;border-radius:7px;padding:8px 10px;} .metric .k{color:#8a93a6;font-size:11px;} .metric .v{font-size:15px;font-weight:600;margin-top:2px;}
+  .news a{display:inline-block;margin:3px 6px 3px 0;background:#0f1115;border:1px solid #2a4170;color:#9ec1ff;border-radius:6px;padding:5px 10px;font-size:12px;text-decoration:none;}
+  .news a:hover{background:#1a2440;}
   .btn-buy{background:#1f6f43;color:#fff;border:none;border-radius:5px;padding:4px 10px;cursor:pointer;font-size:12px;}
-  .btn-sell{background:#8a3030;color:#fff;border:none;border-radius:5px;padding:4px 10px;cursor:pointer;font-size:12px;}
-  .badge{background:#3a2a10;color:#f5c451;border-radius:4px;padding:2px 7px;font-size:11px;margin-right:4px;}
+  .btn-sell{background:#8a3030;color:#fff;border:none;border-radius:5px;padding:5px 12px;cursor:pointer;font-size:12px;}
   .note{color:#8a93a6;font-size:12px;} .conf-高{color:#4ade80;} .conf-低{color:#f5a14a;}
-  svg.chart{width:100%;height:230px;background:#171a21;border:1px solid #2a2f3a;border-radius:10px;}
-  details.glossary{background:#171a21;border:1px solid #2a2f3a;border-radius:8px;padding:10px 16px;margin:20px 0;}
-  details.glossary summary{cursor:pointer;color:#cdd3df;font-weight:600;} details.glossary dt{color:#9ec1ff;margin-top:9px;font-weight:600;font-size:13px;} details.glossary dd{margin:2px 0 0;color:#aeb6c5;font-size:13px;}
-  .legend{font-size:12px;color:#8a93a6;margin:6px 0;} .legend b{color:#4a7cff;} .legend i{color:#8a93a6;font-style:normal;}
-  .controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:12px;}
-  .controls label{display:flex;flex-direction:column;font-size:12px;color:#8a93a6;gap:4px;}
+  .tabs{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;} .tab{background:#0f1115;color:#8a93a6;border:1px solid #2a2f3a;border-radius:6px;padding:6px 12px;cursor:pointer;font-size:13px;}
+  .tab.active{background:#4a7cff;color:#fff;border-color:#4a7cff;}
+  select{background:#0f1115;color:#e6e6e6;border:1px solid #2a2f3a;border-radius:6px;padding:6px 9px;font-size:13px;}
+  svg.chart{width:100%;height:220px;background:#171a21;border:1px solid #2a2f3a;border-radius:10px;}
+  details.more{margin:24px 0;} details.more>summary{cursor:pointer;color:#9ec1ff;font-size:14px;padding:8px 0;}
+  details.glossary{background:#171a21;border:1px solid #2a2f3a;border-radius:8px;padding:8px 14px;margin:14px 0;}
+  details.glossary summary{cursor:pointer;color:#cdd3df;font-size:13px;} details.glossary dt{color:#9ec1ff;margin-top:8px;font-weight:600;font-size:12.5px;} details.glossary dd{margin:2px 0 0;color:#aeb6c5;font-size:12.5px;}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:10px;}
+  .controls label{display:flex;flex-direction:column;font-size:12px;color:#8a93a6;gap:3px;}
+  .legend{font-size:12px;color:#8a93a6;} .legend b{color:#4a7cff;} .legend i{color:#8a93a6;font-style:normal;}
 </style>
 </head>
 <body>
@@ -43,65 +51,67 @@
 </header>
 <div class="wrap">
   <div class="intro">
-    <b>このアプリでできること：</b> 日本の主要株から「上がりやすそうな割安株」を提示し、
-    <b>仮想のお金で売買を練習</b>できます（記録はこの端末のブラウザに保存）。
-    <span class="warn">⚠️ 数字は過去の実績にもとづく目安で、将来の利益を保証しません。投資は自己責任で。</span>
+    <b>使い方：</b> 下の「買い候補」から気になる株を「買う」と、上の<b>マイポートフォリオ</b>に追加されます。
+    各銘柄の<b>損益・売買サイン・指標・ニュース</b>がまとめて見られます（記録はこの端末に保存）。
+    <span class="warn">⚠️ 数字は過去実績にもとづく目安。将来の利益は保証しません。投資は自己責任で。</span>
     <span class="note" id="asof"></span>
   </div>
 
-  <details class="glossary">
-    <summary>📚 用語のかんたん解説</summary>
-    <dl>
-      <dt>TOPIX／市場平均</dt><dd>東証の株全体の動き。「これより儲かったか」を比べる基準。</dd>
-      <dt>市場平均との差</dt><dd>市場平均より何％多く儲かったか。プラスなら市場に勝った。</dd>
-      <dt>勝率</dt><dd>市場平均に勝てた割合。高いほど安定。</dd>
-      <dt>シャープ</dt><dd>リスクに対する儲けの効率。1前後でプロ級。</dd>
-      <dt>最大下落幅</dt><dd>過去いちばん落ち込んだ幅。-30%なら一時3割減った時期あり。</dd>
-      <dt>バリュー（割安）</dt><dd>利益や資産に対し株価が安い状態。日本株で長期に勝ちやすい傾向。</dd>
-      <dt>順位脱落</dt><dd>おすすめ上位から外れたら売る、の合図。</dd>
-    </dl>
-  </details>
-
-  <h2>📈 戦略のこれまで（参考）</h2>
-  <p class="lead">バリュー戦略を過去に続けていたら、の成績です。</p>
-  <div id="summary"></div>
-
-  <h2>📋 ペーパートレード（仮想資金で練習）</h2>
-  <p class="lead">仮想のお金で売買を記録して練習。下の「買い候補」から買えます。記録はこの端末に保存され、他人には見えません。</p>
+  <!-- 主役: 保有銘柄 -->
+  <h2>💼 マイポートフォリオ（保有銘柄）</h2>
+  <p class="lead">保有中の銘柄・株数・損益・売買サインの一覧。行をタップすると<b>指標とニュース</b>を開けます。</p>
   <div class="panel">
     <div id="paperHead"></div>
-    <div id="paperPositions"></div>
+    <div id="holdings"></div>
     <div id="paperCtl" style="margin-top:10px;"></div>
   </div>
 
-  <h2>📊 これまでの的中ぐあい</h2>
-  <p class="lead">「過去に毎月この推奨を出していたら市場平均にどれだけ勝てたか」。中期が安定、短期は実験的です。</p>
-  <div class="panel"><div id="accuracy"></div></div>
-
-  <h2>🎯 買い候補（短期・中期・長期）</h2>
-  <p class="lead">割安さなどを点数化、業種が偏らないよう分散。各銘柄に損切り目安も表示（中期がおすすめ）。</p>
+  <!-- 買い候補 -->
+  <h2>🎯 買い候補 <span class="hint">割安さなどの点数順・業種分散ずみ</span></h2>
   <div class="panel">
     <div class="tabs">
       <button class="tab active" data-h="mid">中期 1〜3ヶ月</button>
-      <button class="tab" data-h="long">長期 6〜24ヶ月</button>
-      <button class="tab" data-h="short">短期 数日〜数週</button>
+      <button class="tab" data-h="long">長期</button>
+      <button class="tab" data-h="short">短期(実験的)</button>
     </div>
     <div id="recoMeta" class="legend"></div>
     <div id="reco"></div>
   </div>
 
-  <h2>🧪 投資シミュレーター</h2>
-  <p class="lead">条件を変えて「もしこう投資していたら」を確認（事前計算した結果を表示）。</p>
-  <div class="panel">
-    <div class="controls">
-      <label>初期資金<select id="s_cap"><option value="1000000">100万円</option><option value="3000000" selected>300万円</option><option value="5000000">500万円</option><option value="10000000">1000万円</option></select></label>
-      <label>保有銘柄数<select id="s_nh"><option>10</option><option selected>20</option><option>30</option></select></label>
-      <label>リバランス<select id="s_reb"><option value="M">毎月</option><option value="Q" selected>四半期</option><option value="Y">年1回</option></select></label>
-      <label>口座<select id="s_acc"><option value="nisa" selected>NISA(非課税)</option><option value="taxable">課税</option></select></label>
+  <details class="glossary">
+    <summary>📚 指標のかんたん解説</summary>
+    <dl>
+      <dt>総合スコア（上位◯%）</dt><dd>割安さ・出遅れを合わせた総合点。上位ほど買い候補として強い。</dd>
+      <dt>割安度（資産・利益）</dt><dd>会社の純資産や利益に対して株価が安いか。高いほど割安寄り。</dd>
+      <dt>収益性(ROE)</dt><dd>自己資本に対してどれだけ稼いでいるか。高いほど効率的。</dd>
+      <dt>直近1ヶ月</dt><dd>過去1ヶ月の値動き。下げすぎは反発、上げすぎは一服の目安。</dd>
+      <dt>値動きの荒さ</dt><dd>年率の変動の大きさ。大きいほどハイリスク・ハイリターン。</dd>
+      <dt>売買サイン</dt><dd>「順位脱落」=おすすめ上位から外れた／「損切り」=損切り目安価格に到達。</dd>
+    </dl>
+  </details>
+
+  <!-- 分析・検証（くわしい人向け） -->
+  <details class="more">
+    <summary>📊 分析・検証を見る（戦略のこれまで／的中ぐあい／シミュレーター）</summary>
+
+    <h2>戦略のこれまで（参考）</h2>
+    <div id="summary"></div>
+
+    <h2>これまでの的中ぐあい</h2>
+    <div class="panel"><div id="accuracy"></div></div>
+
+    <h2>投資シミュレーター</h2>
+    <div class="panel">
+      <div class="controls">
+        <label>初期資金<select id="s_cap"><option value="1000000">100万円</option><option value="3000000" selected>300万円</option><option value="5000000">500万円</option><option value="10000000">1000万円</option></select></label>
+        <label>保有銘柄数<select id="s_nh"><option>10</option><option selected>20</option><option>30</option></select></label>
+        <label>リバランス<select id="s_reb"><option value="M">毎月</option><option value="Q" selected>四半期</option><option value="Y">年1回</option></select></label>
+        <label>口座<select id="s_acc"><option value="nisa" selected>NISA(非課税)</option><option value="taxable">課税</option></select></label>
+      </div>
+      <div id="simResult"></div>
+      <svg class="chart" id="simChart" viewBox="0 0 1000 220" preserveAspectRatio="none"></svg>
     </div>
-    <div id="simResult"></div>
-    <svg class="chart" id="simChart" viewBox="0 0 1000 230" preserveAspectRatio="none"></svg>
-  </div>
+  </details>
 </div>
 <script src="app.js"></script>
 </body>

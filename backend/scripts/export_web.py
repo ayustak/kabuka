@@ -15,12 +15,64 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import pandas as pd
 
+import numpy as np
+
 from app.signals.recommend import recommend_all
 from app.signals.tracking import historical_accuracy_all
 from app.analysis.simulate import simulate
-from app.ingestion.jquants_collect import load_prices
+from app.analysis.backtest.factors import compute_factors
+from app.analysis.backtest.factors_fundamental import build_fundamental_factors_jq
+from app.ingestion.jquants_collect import load_membership, load_prices, load_statements
 
 WEB_DATA = Path(__file__).resolve().parent.parent.parent / "web" / "data"
+
+
+def build_stock_metrics() -> dict:
+    """現構成銘柄ごとの売買判断指標（保有銘柄の詳細・ニュース紐づけ用）。"""
+    prices = load_prices()
+    stmt = load_statements()
+    mem = load_membership()
+    factors = compute_factors(prices)
+    fund = build_fundamental_factors_jq(prices, stmt)
+    factors.update(fund)
+    # value傾斜スコア（中期）の順位
+    vt = (factors["value_bp"].rank(axis=1, pct=True) * 0.4
+          + factors["value_ep"].rank(axis=1, pct=True) * 0.4
+          + factors["reversal_1m"].rank(axis=1, pct=True) * 0.2)
+    asof = vt.dropna(how="all").index[-1]
+    last_ym = mem["month_end"].max().to_period("M")
+    members = set(mem.loc[mem["month_end"].dt.to_period("M") == last_ym, "code"])
+    name_map = (mem.sort_values("month_end").drop_duplicates("code", keep="last")
+                .set_index("code")["name"].to_dict())
+    last_day = prices.index[-1]
+    score_rank = vt.loc[asof].rank(pct=True)
+
+    daily_ret = np.log(prices / prices.shift(1))
+    vol = daily_ret.rolling(20).std().iloc[-1] * np.sqrt(252)
+
+    out = {}
+    for c in members:
+        if c not in prices.columns:
+            continue
+        price = prices.at[last_day, c]
+        if not np.isfinite(price):
+            continue
+        def g(panel):
+            v = factors[panel].loc[asof, c] if c in factors[panel].columns else np.nan
+            return round(float(v), 4) if np.isfinite(v) else None
+        rev = g("reversal_1m")
+        out[c] = {
+            "name": name_map.get(c, ""),
+            "code4": c[:4],                      # ニュースリンク用の4桁コード
+            "price": round(float(price), 1),
+            "score_pct": round(float(score_rank[c]) * 100, 0) if np.isfinite(score_rank.get(c, np.nan)) else None,
+            "value_bp": g("value_bp"),           # 純資産/時価総額（高いほど割安）
+            "value_ep": g("value_ep"),           # 利益/時価総額（高いほど割安）
+            "roe": g("quality_roe"),             # 自己資本利益率（収益性）
+            "ret_1m": (round(-rev, 4) if rev is not None else None),  # 直近1ヶ月リターン
+            "vol_pct": round(float(vol[c]) * 100, 1) if c in vol and np.isfinite(vol[c]) else None,
+        }
+    return {"asof": str(asof.date()), "price_date": str(last_day.date()), "stocks": out}
 
 
 def main() -> None:
@@ -46,6 +98,9 @@ def main() -> None:
     last = px.index.max()
     prices_latest = {c: round(float(v), 1) for c, v in px.loc[last].dropna().items()}
     dump("prices_latest.json", {"date": str(last.date()), "prices": prices_latest})
+
+    # 銘柄ごとの売買判断指標（保有銘柄の詳細表示用・現構成銘柄すべて）
+    dump("stock_metrics.json", build_stock_metrics())
 
     # シミュレーション結果グリッド（静的サイトはその場計算できないため事前計算）
     grid = []

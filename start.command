@@ -1,31 +1,22 @@
 #!/usr/bin/env bash
-# kabuka をローカル起動する簡単スクリプト。
+# kabuka をローカル起動。最新データで静的ダッシュボード(web/)を配信する。
 # 使い方: ターミナルで ./start.command  もしくは Finder でダブルクリック。
 set -e
 cd "$(dirname "$0")"
-
 PY=.venv/bin/python
-UVICORN=.venv/bin/uvicorn
 
-# 念のため最新データを取得（失敗しても続行）
+# 最新を取得（失敗しても続行）
 git pull --rebase --autostash 2>/dev/null || true
 
-cd backend
-
-# 初回などキャッシュ未生成なら作成
-if [ ! -f data/strategy_summary.json ]; then
-  echo "初回データを準備中…（少し待ちます）"
-  ../$PY scripts/build_dashboard_data.py
-fi
+echo "データを準備中…（30秒ほど）"
+( cd backend && ../$PY scripts/build_dashboard_data.py >/dev/null 2>&1 && ../$PY scripts/export_web.py >/dev/null 2>&1 )
 
 echo ""
 echo "=================================================="
-echo "  kabuka を起動します → http://127.0.0.1:8000"
+echo "  kabuka を起動 → http://127.0.0.1:8000"
 echo "  止めるには Ctrl+C"
 echo "=================================================="
-echo ""
-
-# 起動直後にブラウザを自動で開く
 ( sleep 2; open "http://127.0.0.1:8000" ) >/dev/null 2>&1 &
 
-exec ../$UVICORN app.main:app --port 8000
+cd web
+exec ../$PY -m http.server 8000
