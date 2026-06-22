@@ -4,272 +4,263 @@
     {
       "code": "90220",
       "name": "東海旅客鉄道",
-      "score": 0.9527,
-      "value_bp": 1.63,
-      "value_ep": 0.1696,
-      "reversal_1m": 0.0662,
-      "weight": 0.0333
+      "score": 0.9537,
+      "value_bp": 1.628,
+      "value_ep": 0.1694,
+      "reversal_1m": 0.0653,
+      "weight": 0.0345
     },
     {
       "code": "49020",
       "name": "コニカミノルタ",
-      "score": 0.9491,
-      "value_bp": 1.949,
-      "value_ep": 0.1081,
-      "reversal_1m": 0.0904,
-      "weight": 0.0333
+      "score": 0.9477,
+      "value_bp": 1.941,
+      "value_ep": 0.1077,
+      "reversal_1m": 0.0863,
+      "weight": 0.0345
     },
     {
       "code": "75320",
       "name": "パン・パシフィック・インターナショナルホールディングス",
-      "score": 0.917,
-      "value_bp": 1.238,
-      "value_ep": 0.1739,
-      "reversal_1m": 0.0698,
-      "weight": 0.0333
+      "score": 0.9233,
+      "value_bp": 1.242,
+      "value_ep": 0.1745,
+      "reversal_1m": 0.073,
+      "weight": 0.0345
     },
     {
-      "code": "91040",
-      "name": "商船三井",
-      "score": 0.911,
-      "value_bp": 1.589,
-      "value_ep": 0.1116,
-      "reversal_1m": 0.0395,
-      "weight": 0.0333
+      "code": "50190",
+      "name": "出光興産",
+      "score": 0.9124,
+      "value_bp": 1.256,
+      "value_ep": 0.1064,
+      "reversal_1m": 0.1091,
+      "weight": 0.0345
     },
     {
       "code": "95090",
       "name": "北海道電力",
       "score": 0.9085,
-      "value_bp": 2.169,
-      "value_ep": 0.2224,
-      "reversal_1m": 0.0149,
-      "weight": 0.0333
-    },
-    {
-      "code": "50190",
-      "name": "出光興産",
-      "score": 0.9081,
-      "value_bp": 1.25,
-      "value_ep": 0.1059,
-      "reversal_1m": 0.1047,
-      "weight": 0.0333
+      "value_bp": 2.167,
+      "value_ep": 0.2223,
+      "reversal_1m": 0.0141,
+      "weight": 0.0345
     },
     {
       "code": "99870",
       "name": "スズケン",
-      "score": 0.9074,
-      "value_bp": 1.259,
-      "value_ep": 0.1082,
-      "reversal_1m": 0.0791,
-      "weight": 0.0333
-    },
-    {
-      "code": "95020",
-      "name": "中部電力",
-      "score": 0.8919,
-      "value_bp": 1.472,
-      "value_ep": 0.1065,
-      "reversal_1m": 0.0358,
-      "weight": 0.0333
-    },
-    {
-      "code": "95040",
-      "name": "中国電力",
-      "score": 0.8806,
-      "value_bp": 2.459,
-      "value_ep": 0.2014,
-      "reversal_1m": -0.0041,
-      "weight": 0.0333
-    },
-    {
-      "code": "14140",
-      "name": "ショーボンドホールディングス",
-      "score": 0.8788,
-      "value_bp": 1.619,
-      "value_ep": 0.2164,
-      "reversal_1m": 0.0016,
-      "weight": 0.0333
-    },
-    {
-      "code": "91010",
-      "name": "日本郵船",
-      "score": 0.8756,
-      "value_bp": 1.47,
-      "value_ep": 0.1005,
-      "reversal_1m": 0.0308,
-      "weight": 0.0333
-    },
-    {
-      "code": "95070",
-      "name": "四国電力",
-      "score": 0.8749,
-      "value_bp": 1.598,
-      "value_ep": 0.1685,
-      "reversal_1m": 0.0034,
-      "weight": 0.0333
-    },
-    {
-      "code": "54060",
-      "name": "神戸製鋼所",
-      "score": 0.8739,
-      "value_bp": 1.622,
-      "value_ep": 0.1203,
-      "reversal_1m": 0.0071,
-      "weight": 0.0333
+      "score": 0.9081,
+      "value_bp": 1.256,
+      "value_ep": 0.108,
+      "reversal_1m": 0.0767,
+      "weight": 0.0345
     },
     {
       "code": "72590",
       "name": "アイシン",
-      "score": 0.8739,
-      "value_bp": 1.321,
-      "value_ep": 0.0984,
-      "reversal_1m": 0.0486,
-      "weight": 0.0333
+      "score": 0.9046,
+      "value_bp": 1.354,
+      "value_ep": 0.1009,
+      "reversal_1m": 0.0733,
+      "weight": 0.0345
+    },
+    {
+      "code": "91040",
+      "name": "商船三井",
+      "score": 0.9028,
+      "value_bp": 1.58,
+      "value_ep": 0.111,
+      "reversal_1m": 0.034,
+      "weight": 0.0345
+    },
+    {
+      "code": "14140",
+      "name": "ショーボンドホールディングス",
+      "score": 0.8866,
+      "value_bp": 1.626,
+      "value_ep": 0.2173,
+      "reversal_1m": 0.0059,
+      "weight": 0.0345
+    },
+    {
+      "code": "95040",
+      "name": "中国電力",
+      "score": 0.8859,
+      "value_bp": 2.462,
+      "value_ep": 0.2016,
+      "reversal_1m": -0.0027,
+      "weight": 0.0345
     },
     {
       "code": "95050",
       "name": "北陸電力",
-      "score": 0.8739,
-      "value_bp": 2.546,
-      "value_ep": 0.3066,
-      "reversal_1m": -0.0119,
-      "weight": 0.0333
-    },
-    {
-      "code": "95130",
-      "name": "電源開発",
-      "score": 0.8696,
-      "value_bp": 2.078,
-      "value_ep": 0.0832,
-      "reversal_1m": 0.0445,
-      "weight": 0.0333
+      "score": 0.8784,
+      "value_bp": 2.542,
+      "value_ep": 0.3062,
+      "reversal_1m": -0.0135,
+      "weight": 0.0345
     },
     {
       "code": "80600",
       "name": "キヤノンマーケティングジャパン",
-      "score": 0.8615,
-      "value_bp": 1.13,
-      "value_ep": 0.1095,
-      "reversal_1m": 0.0445,
-      "weight": 0.0333
+      "score": 0.8756,
+      "value_bp": 1.141,
+      "value_ep": 0.1107,
+      "reversal_1m": 0.0545,
+      "weight": 0.0345
     },
     {
-      "code": "45160",
-      "name": "日本新薬",
-      "score": 0.859,
-      "value_bp": 1.089,
-      "value_ep": 0.1065,
-      "reversal_1m": 0.0561,
-      "weight": 0.0333
+      "code": "54060",
+      "name": "神戸製鋼所",
+      "score": 0.8735,
+      "value_bp": 1.622,
+      "value_ep": 0.1203,
+      "reversal_1m": 0.0071,
+      "weight": 0.0345
     },
     {
-      "code": "13330",
-      "name": "Ｕｍｉｏｓ",
-      "score": 0.8583,
-      "value_bp": 1.311,
-      "value_ep": 0.1172,
-      "reversal_1m": 0.0155,
-      "weight": 0.0333
-    },
-    {
-      "code": "90310",
-      "name": "西日本鉄道",
-      "score": 0.858,
-      "value_bp": 1.346,
-      "value_ep": 0.145,
-      "reversal_1m": 0.0078,
-      "weight": 0.0333
-    },
-    {
-      "code": "72030",
-      "name": "トヨタ自動車",
-      "score": 0.8544,
-      "value_bp": 1.103,
-      "value_ep": 0.0877,
-      "reversal_1m": 0.0913,
-      "weight": 0.0333
+      "code": "95070",
+      "name": "四国電力",
+      "score": 0.8735,
+      "value_bp": 1.596,
+      "value_ep": 0.1683,
+      "reversal_1m": 0.0021,
+      "weight": 0.0345
     },
     {
       "code": "80880",
       "name": "岩谷産業",
-      "score": 0.8512,
-      "value_bp": 1.012,
-      "value_ep": 0.1084,
-      "reversal_1m": 0.0714,
-      "weight": 0.0333
+      "score": 0.8714,
+      "value_bp": 1.033,
+      "value_ep": 0.1107,
+      "reversal_1m": 0.0922,
+      "weight": 0.0345
     },
     {
-      "code": "95030",
-      "name": "関西電力",
-      "score": 0.8512,
-      "value_bp": 1.334,
-      "value_ep": 0.1466,
-      "reversal_1m": 0.0043,
-      "weight": 0.0333
+      "code": "95020",
+      "name": "中部電力",
+      "score": 0.8682,
+      "value_bp": 1.451,
+      "value_ep": 0.105,
+      "reversal_1m": 0.0216,
+      "weight": 0.0345
+    },
+    {
+      "code": "72030",
+      "name": "トヨタ自動車",
+      "score": 0.8618,
+      "value_bp": 1.117,
+      "value_ep": 0.0889,
+      "reversal_1m": 0.104,
+      "weight": 0.0345
+    },
+    {
+      "code": "91010",
+      "name": "日本郵船",
+      "score": 0.859,
+      "value_bp": 1.456,
+      "value_ep": 0.0996,
+      "reversal_1m": 0.0209,
+      "weight": 0.0345
+    },
+    {
+      "code": "45160",
+      "name": "日本新薬",
+      "score": 0.8569,
+      "value_bp": 1.088,
+      "value_ep": 0.1064,
+      "reversal_1m": 0.0553,
+      "weight": 0.0345
+    },
+    {
+      "code": "95130",
+      "name": "電源開発",
+      "score": 0.8562,
+      "value_bp": 2.057,
+      "value_ep": 0.0824,
+      "reversal_1m": 0.0342,
+      "weight": 0.0345
+    },
+    {
+      "code": "90310",
+      "name": "西日本鉄道",
+      "score": 0.8519,
+      "value_bp": 1.339,
+      "value_ep": 0.1443,
+      "reversal_1m": 0.0028,
+      "weight": 0.0345
     },
     {
       "code": "95080",
       "name": "九州電力",
-      "score": 0.8473,
-      "value_bp": 1.279,
-      "value_ep": 0.1991,
-      "reversal_1m": 0.0012,
-      "weight": 0.0333
+      "score": 0.8498,
+      "value_bp": 1.278,
+      "value_ep": 0.1989,
+      "reversal_1m": 0.0003,
+      "weight": 0.0345
     },
     {
       "code": "27840",
       "name": "アルフレッサ　ホールディングス",
-      "score": 0.8442,
+      "score": 0.8456,
       "value_bp": 1.278,
       "value_ep": 0.0999,
-      "reversal_1m": 0.0229,
-      "weight": 0.0333
+      "reversal_1m": 0.0226,
+      "weight": 0.0345
     },
     {
-      "code": "85720",
-      "name": "アコム",
-      "score": 0.8353,
-      "value_bp": 1.023,
-      "value_ep": 0.1133,
-      "reversal_1m": 0.0413,
-      "weight": 0.0333
+      "code": "95030",
+      "name": "関西電力",
+      "score": 0.8449,
+      "value_bp": 1.326,
+      "value_ep": 0.1457,
+      "reversal_1m": -0.0017,
+      "weight": 0.0345
     },
     {
-      "code": "54110",
-      "name": "ＪＦＥホールディングス",
-      "score": 0.8318,
-      "value_bp": 2.551,
-      "value_ep": 0.068,
-      "reversal_1m": 0.0522,
-      "weight": 0.0333
+      "code": "13330",
+      "name": "Ｕｍｉｏｓ",
+      "score": 0.8417,
+      "value_bp": 1.297,
+      "value_ep": 0.1159,
+      "reversal_1m": 0.0047,
+      "weight": 0.0345
     },
     {
       "code": "95060",
       "name": "東北電力",
-      "score": 0.8311,
-      "value_bp": 2.118,
-      "value_ep": 0.1611,
-      "reversal_1m": -0.0414,
-      "weight": 0.0333
+      "score": 0.8417,
+      "value_bp": 2.134,
+      "value_ep": 0.1623,
+      "reversal_1m": -0.0337,
+      "weight": 0.0345
     },
     {
-      "code": "84730",
-      "name": "ＳＢＩホールディングス",
-      "score": 0.8269,
-      "value_bp": 0.981,
-      "value_ep": 0.2284,
-      "reversal_1m": 0.0272,
-      "weight": 0.0333
+      "code": "16050",
+      "name": "ＩＮＰＥＸ",
+      "score": 0.8417,
+      "value_bp": 1.181,
+      "value_ep": 0.0907,
+      "reversal_1m": 0.0442,
+      "weight": 0.0345
     },
     {
-      "code": "90450",
-      "name": "京阪ホールディングス",
-      "score": 0.8265,
-      "value_bp": 1.091,
-      "value_ep": 0.1014,
-      "reversal_1m": 0.0318,
-      "weight": 0.0333
+      "code": "85720",
+      "name": "アコム",
+      "score": 0.8406,
+      "value_bp": 1.026,
+      "value_ep": 0.1136,
+      "reversal_1m": 0.0442,
+      "weight": 0.0345
+    },
+    {
+      "code": "54110",
+      "name": "ＪＦＥホールディングス",
+      "score": 0.8357,
+      "value_bp": 2.562,
+      "value_ep": 0.0683,
+      "reversal_1m": 0.0566,
+      "weight": 0.0345
     }
   ]
 }
