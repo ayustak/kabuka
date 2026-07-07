@@ -7,8 +7,8 @@
   "sharpe": 1.01,
   "max_dd_pct": -27.9,
   "cagr_pretax_pct": 14.2,
-  "cagr_aftertax_pct": 11.2,
-  "cagr_topix_pct": 10.4,
+  "cagr_aftertax_pct": 11.1,
+  "cagr_topix_pct": 10.3,
   "excess_nisa_pct": 3.8,
   "excess_taxable_pct": 0.8,
   "cost_bps_oneway": 20.0,
@@ -580,8 +580,8 @@
     },
     {
       "date": "2026-06",
-      "strategy": 3.777,
-      "topix": 2.696
+      "strategy": 3.759,
+      "topix": 2.67
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
