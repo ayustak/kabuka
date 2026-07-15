@@ -2,13 +2,13 @@
   "period": "2017-01-31 〜 2026-06-30",
   "universe": "TOPIX500（時点別・生存者バイアス除去）",
   "strategy": "value傾斜（B/P 0.4 + 益回り 0.4 + 短期反転 0.2）ロングオンリー上位分位",
-  "ann_return_pct": 14.7,
+  "ann_return_pct": 14.8,
   "ann_vol_pct": 15.0,
   "sharpe": 1.0,
   "max_dd_pct": -28.0,
   "cagr_pretax_pct": 14.0,
   "cagr_aftertax_pct": 11.0,
-  "cagr_topix_pct": 10.3,
+  "cagr_topix_pct": 10.4,
   "excess_nisa_pct": 3.7,
   "excess_taxable_pct": 0.7,
   "cost_bps_oneway": 20.0,
@@ -580,8 +580,8 @@
     },
     {
       "date": "2026-06",
-      "strategy": 3.695,
-      "topix": 2.654
+      "strategy": 3.723,
+      "topix": 2.687
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
