@@ -45,22 +45,22 @@
     },
     {
       "date": "2017-07",
-      "strategy": 1.159,
+      "strategy": 1.158,
       "topix": 1.063
     },
     {
       "date": "2017-08",
-      "strategy": 1.219,
+      "strategy": 1.218,
       "topix": 1.101
     },
     {
       "date": "2017-09",
-      "strategy": 1.284,
+      "strategy": 1.283,
       "topix": 1.161
     },
     {
       "date": "2017-10",
-      "strategy": 1.308,
+      "strategy": 1.307,
       "topix": 1.178
     },
     {
@@ -70,222 +70,222 @@
     },
     {
       "date": "2017-12",
-      "strategy": 1.352,
+      "strategy": 1.35,
       "topix": 1.207
     },
     {
       "date": "2018-01",
-      "strategy": 1.296,
+      "strategy": 1.295,
       "topix": 1.162
     },
     {
       "date": "2018-02",
-      "strategy": 1.259,
+      "strategy": 1.257,
       "topix": 1.128
     },
     {
       "date": "2018-03",
-      "strategy": 1.324,
+      "strategy": 1.321,
       "topix": 1.168
     },
     {
       "date": "2018-04",
-      "strategy": 1.301,
+      "strategy": 1.299,
       "topix": 1.148
     },
     {
       "date": "2018-05",
-      "strategy": 1.28,
+      "strategy": 1.277,
       "topix": 1.137
     },
     {
       "date": "2018-06",
-      "strategy": 1.312,
+      "strategy": 1.31,
       "topix": 1.152
     },
     {
       "date": "2018-07",
-      "strategy": 1.29,
+      "strategy": 1.287,
       "topix": 1.14
     },
     {
       "date": "2018-08",
-      "strategy": 1.347,
+      "strategy": 1.344,
       "topix": 1.194
     },
     {
       "date": "2018-09",
-      "strategy": 1.231,
+      "strategy": 1.229,
       "topix": 1.082
     },
     {
       "date": "2018-10",
-      "strategy": 1.24,
+      "strategy": 1.237,
       "topix": 1.096
     },
     {
       "date": "2018-11",
-      "strategy": 1.108,
+      "strategy": 1.106,
       "topix": 0.982
     },
     {
       "date": "2018-12",
-      "strategy": 1.187,
+      "strategy": 1.185,
       "topix": 1.03
     },
     {
       "date": "2019-01",
-      "strategy": 1.21,
+      "strategy": 1.207,
       "topix": 1.057
     },
     {
       "date": "2019-02",
-      "strategy": 1.183,
+      "strategy": 1.181,
       "topix": 1.046
     },
     {
       "date": "2019-03",
-      "strategy": 1.217,
+      "strategy": 1.215,
       "topix": 1.063
     },
     {
       "date": "2019-04",
-      "strategy": 1.145,
+      "strategy": 1.143,
       "topix": 0.994
     },
     {
       "date": "2019-05",
-      "strategy": 1.184,
+      "strategy": 1.182,
       "topix": 1.019
     },
     {
       "date": "2019-06",
-      "strategy": 1.193,
+      "strategy": 1.191,
       "topix": 1.029
     },
     {
       "date": "2019-07",
-      "strategy": 1.116,
+      "strategy": 1.114,
       "topix": 0.994
     },
     {
       "date": "2019-08",
-      "strategy": 1.199,
+      "strategy": 1.197,
       "topix": 1.043
     },
     {
       "date": "2019-09",
-      "strategy": 1.257,
+      "strategy": 1.255,
       "topix": 1.096
     },
     {
       "date": "2019-10",
-      "strategy": 1.271,
+      "strategy": 1.268,
       "topix": 1.117
     },
     {
       "date": "2019-11",
-      "strategy": 1.277,
+      "strategy": 1.274,
       "topix": 1.131
     },
     {
       "date": "2019-12",
-      "strategy": 1.224,
+      "strategy": 1.222,
       "topix": 1.107
     },
     {
       "date": "2020-01",
-      "strategy": 1.086,
+      "strategy": 1.084,
       "topix": 0.993
     },
     {
       "date": "2020-02",
-      "strategy": 0.974,
+      "strategy": 0.972,
       "topix": 0.922
     },
     {
       "date": "2020-03",
-      "strategy": 1.036,
+      "strategy": 1.034,
       "topix": 0.962
     },
     {
       "date": "2020-04",
-      "strategy": 1.095,
+      "strategy": 1.093,
       "topix": 1.028
     },
     {
       "date": "2020-05",
-      "strategy": 1.08,
+      "strategy": 1.077,
       "topix": 1.024
     },
     {
       "date": "2020-06",
-      "strategy": 1.004,
+      "strategy": 1.002,
       "topix": 0.983
     },
     {
       "date": "2020-07",
-      "strategy": 1.132,
+      "strategy": 1.13,
       "topix": 1.063
     },
     {
       "date": "2020-08",
-      "strategy": 1.127,
+      "strategy": 1.125,
       "topix": 1.068
     },
     {
       "date": "2020-09",
-      "strategy": 1.084,
+      "strategy": 1.082,
       "topix": 1.038
     },
     {
       "date": "2020-10",
-      "strategy": 1.187,
+      "strategy": 1.185,
       "topix": 1.153
     },
     {
       "date": "2020-11",
-      "strategy": 1.235,
+      "strategy": 1.232,
       "topix": 1.186
     },
     {
       "date": "2020-12",
-      "strategy": 1.262,
+      "strategy": 1.26,
       "topix": 1.189
     },
     {
       "date": "2021-01",
-      "strategy": 1.336,
+      "strategy": 1.333,
       "topix": 1.225
     },
     {
       "date": "2021-02",
-      "strategy": 1.457,
+      "strategy": 1.454,
       "topix": 1.284
     },
     {
       "date": "2021-03",
-      "strategy": 1.407,
+      "strategy": 1.405,
       "topix": 1.247
     },
     {
       "date": "2021-04",
-      "strategy": 1.42,
+      "strategy": 1.417,
       "topix": 1.264
     },
     {
       "date": "2021-05",
-      "strategy": 1.428,
+      "strategy": 1.426,
       "topix": 1.277
     },
     {
       "date": "2021-06",
-      "strategy": 1.401,
+      "strategy": 1.398,
       "topix": 1.249
     },
     {
       "date": "2021-07",
-      "strategy": 1.445,
+      "strategy": 1.442,
       "topix": 1.289
     },
     {
@@ -295,17 +295,17 @@
     },
     {
       "date": "2021-09",
-      "strategy": 1.469,
+      "strategy": 1.468,
       "topix": 1.315
     },
     {
       "date": "2021-10",
-      "strategy": 1.394,
+      "strategy": 1.393,
       "topix": 1.267
     },
     {
       "date": "2021-11",
-      "strategy": 1.453,
+      "strategy": 1.452,
       "topix": 1.309
     },
     {
@@ -380,7 +380,7 @@
     },
     {
       "date": "2023-02",
-      "strategy": 1.74,
+      "strategy": 1.739,
       "topix": 1.317
     },
     {
@@ -480,7 +480,7 @@
     },
     {
       "date": "2024-10",
-      "strategy": 2.453,
+      "strategy": 2.452,
       "topix": 1.762
     },
     {
@@ -490,7 +490,7 @@
     },
     {
       "date": "2024-12",
-      "strategy": 2.561,
+      "strategy": 2.56,
       "topix": 1.833
     },
     {
@@ -525,12 +525,12 @@
     },
     {
       "date": "2025-07",
-      "strategy": 3.011,
+      "strategy": 3.01,
       "topix": 2.021
     },
     {
       "date": "2025-08",
-      "strategy": 3.034,
+      "strategy": 3.033,
       "topix": 2.062
     },
     {
@@ -545,7 +545,7 @@
     },
     {
       "date": "2025-11",
-      "strategy": 3.353,
+      "strategy": 3.352,
       "topix": 2.24
     },
     {
@@ -555,7 +555,7 @@
     },
     {
       "date": "2026-01",
-      "strategy": 3.826,
+      "strategy": 3.825,
       "topix": 2.588
     },
     {
@@ -580,7 +580,7 @@
     },
     {
       "date": "2026-06",
-      "strategy": 3.817,
+      "strategy": 3.816,
       "topix": 2.631
     },
     {
