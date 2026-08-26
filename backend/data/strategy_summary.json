@@ -7,7 +7,7 @@
   "sharpe": 1.06,
   "max_dd_pct": -27.9,
   "cagr_pretax_pct": 15.2,
-  "cagr_aftertax_pct": 11.9,
+  "cagr_aftertax_pct": 12.0,
   "cagr_topix_pct": 10.4,
   "excess_nisa_pct": 4.8,
   "excess_taxable_pct": 1.5,
@@ -585,8 +585,8 @@
     },
     {
       "date": "2026-07",
-      "strategy": 4.103,
-      "topix": 2.69
+      "strategy": 4.122,
+      "topix": 2.702
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
