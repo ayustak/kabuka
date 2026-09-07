@@ -2,273 +2,273 @@
   "asof": "2026-09-30",
   "holdings": [
     {
-      "code": "22640",
-      "name": "森永乳業",
-      "score": 0.9628,
-      "value_bp": 3.094,
-      "value_ep": 0.2384,
-      "reversal_1m": 0.0401,
-      "weight": 0.0333
-    },
-    {
       "code": "58010",
       "name": "古河電気工業",
-      "score": 0.954,
-      "value_bp": 1.542,
-      "value_ep": 0.2669,
-      "reversal_1m": 0.0448,
-      "weight": 0.0333
-    },
-    {
-      "code": "58020",
-      "name": "住友電気工業",
-      "score": 0.9494,
-      "value_bp": 1.649,
-      "value_ep": 0.2182,
-      "reversal_1m": 0.0404,
-      "weight": 0.0333
-    },
-    {
-      "code": "90220",
-      "name": "東海旅客鉄道",
-      "score": 0.909,
-      "value_bp": 1.376,
-      "value_ep": 0.1432,
-      "reversal_1m": 0.0304,
-      "weight": 0.0333
-    },
-    {
-      "code": "51100",
-      "name": "住友ゴム工業",
-      "score": 0.9012,
-      "value_bp": 1.298,
-      "value_ep": 0.0912,
-      "reversal_1m": 0.0672,
-      "weight": 0.0333
-    },
-    {
-      "code": "19110",
-      "name": "住友林業",
-      "score": 0.9005,
-      "value_bp": 1.263,
-      "value_ep": 0.1326,
-      "reversal_1m": 0.034,
-      "weight": 0.0333
-    },
-    {
-      "code": "32910",
-      "name": "飯田グループホールディングス",
-      "score": 0.8927,
-      "value_bp": 1.603,
-      "value_ep": 0.0979,
-      "reversal_1m": 0.0297,
-      "weight": 0.0333
-    },
-    {
-      "code": "45160",
-      "name": "日本新薬",
-      "score": 0.8825,
-      "value_bp": 1.255,
-      "value_ep": 0.1227,
-      "reversal_1m": 0.0275,
-      "weight": 0.0333
-    },
-    {
-      "code": "66320",
-      "name": "ＪＶＣケンウッド",
-      "score": 0.8644,
-      "value_bp": 1.027,
-      "value_ep": 0.1048,
-      "reversal_1m": 0.0424,
-      "weight": 0.0333
-    },
-    {
-      "code": "90310",
-      "name": "西日本鉄道",
-      "score": 0.8634,
-      "value_bp": 1.229,
-      "value_ep": 0.1325,
-      "reversal_1m": 0.022,
-      "weight": 0.0333
-    },
-    {
-      "code": "72400",
-      "name": "ＮＯＫ",
-      "score": 0.8612,
-      "value_bp": 1.31,
-      "value_ep": 0.0959,
-      "reversal_1m": 0.0269,
-      "weight": 0.0333
-    },
-    {
-      "code": "16050",
-      "name": "ＩＮＰＥＸ",
-      "score": 0.8421,
-      "value_bp": 1.078,
-      "value_ep": 0.0827,
+      "score": 0.9501,
+      "value_bp": 1.544,
+      "value_ep": 0.2672,
       "reversal_1m": 0.0458,
-      "weight": 0.0333
-    },
-    {
-      "code": "13330",
-      "name": "Ｕｍｉｏｓ",
-      "score": 0.8393,
-      "value_bp": 1.278,
-      "value_ep": 0.1142,
-      "reversal_1m": 0.0128,
       "weight": 0.0333
     },
     {
       "code": "49020",
       "name": "コニカミノルタ",
-      "score": 0.8368,
-      "value_bp": 1.649,
-      "value_ep": 0.0914,
-      "reversal_1m": 0.0125,
+      "score": 0.9356,
+      "value_bp": 1.747,
+      "value_ep": 0.0969,
+      "reversal_1m": 0.0707,
       "weight": 0.0333
     },
     {
-      "code": "72690",
-      "name": "スズキ",
-      "score": 0.8287,
-      "value_bp": 0.848,
-      "value_ep": 0.1082,
-      "reversal_1m": 0.0746,
+      "code": "90220",
+      "name": "東海旅客鉄道",
+      "score": 0.9356,
+      "value_bp": 1.398,
+      "value_ep": 0.1455,
+      "reversal_1m": 0.0466,
       "weight": 0.0333
     },
     {
-      "code": "83090",
-      "name": "三井住友トラストグループ",
-      "score": 0.8251,
-      "value_bp": 2.834,
-      "value_ep": 0.2523,
-      "reversal_1m": -0.0134,
-      "weight": 0.0333
-    },
-    {
-      "code": "57140",
-      "name": "ＤＯＷＡホールディングス",
-      "score": 0.8241,
-      "value_bp": 0.832,
-      "value_ep": 0.1089,
-      "reversal_1m": 0.0773,
-      "weight": 0.0333
-    },
-    {
-      "code": "45400",
-      "name": "ツムラ",
-      "score": 0.8234,
-      "value_bp": 1.162,
-      "value_ep": 0.0986,
-      "reversal_1m": 0.0181,
-      "weight": 0.0333
-    },
-    {
-      "code": "90010",
-      "name": "東武鉄道",
-      "score": 0.8163,
-      "value_bp": 1.071,
-      "value_ep": 0.0959,
-      "reversal_1m": 0.0229,
-      "weight": 0.0333
-    },
-    {
-      "code": "51050",
-      "name": "ＴＯＹＯ　ＴＩＲＥ",
-      "score": 0.8156,
-      "value_bp": 0.93,
-      "value_ep": 0.1131,
-      "reversal_1m": 0.0316,
-      "weight": 0.0333
-    },
-    {
-      "code": "80530",
-      "name": "住友商事",
-      "score": 0.8156,
-      "value_bp": 2.132,
-      "value_ep": 0.2723,
-      "reversal_1m": -0.0158,
-      "weight": 0.0333
-    },
-    {
-      "code": "41180",
-      "name": "カネカ",
-      "score": 0.8124,
-      "value_bp": 1.354,
-      "value_ep": 0.0804,
-      "reversal_1m": 0.0191,
-      "weight": 0.0333
-    },
-    {
-      "code": "54060",
-      "name": "神戸製鋼所",
-      "score": 0.811,
-      "value_bp": 1.572,
-      "value_ep": 0.1165,
-      "reversal_1m": -0.0047,
-      "weight": 0.0333
-    },
-    {
-      "code": "51010",
-      "name": "横浜ゴム",
-      "score": 0.8103,
-      "value_bp": 0.921,
-      "value_ep": 0.0893,
+      "code": "19110",
+      "name": "住友林業",
+      "score": 0.9158,
+      "value_bp": 1.278,
+      "value_ep": 0.1342,
       "reversal_1m": 0.046,
       "weight": 0.0333
     },
     {
-      "code": "52320",
-      "name": "住友大阪セメント",
-      "score": 0.8042,
-      "value_bp": 1.146,
-      "value_ep": 0.065,
-      "reversal_1m": 0.0597,
+      "code": "22640",
+      "name": "森永乳業",
+      "score": 0.9119,
+      "value_bp": 3.036,
+      "value_ep": 0.2339,
+      "reversal_1m": 0.0212,
       "weight": 0.0333
     },
     {
-      "code": "82420",
-      "name": "エイチ・ツー・オー　リテイリング",
-      "score": 0.8039,
-      "value_bp": 0.933,
-      "value_ep": 0.0828,
-      "reversal_1m": 0.0527,
+      "code": "51100",
+      "name": "住友ゴム工業",
+      "score": 0.9051,
+      "value_bp": 1.306,
+      "value_ep": 0.0918,
+      "reversal_1m": 0.0737,
       "weight": 0.0333
     },
     {
-      "code": "80880",
-      "name": "岩谷産業",
-      "score": 0.8018,
-      "value_bp": 0.894,
-      "value_ep": 0.0958,
-      "reversal_1m": 0.0424,
+      "code": "32910",
+      "name": "飯田グループホールディングス",
+      "score": 0.8988,
+      "value_bp": 1.61,
+      "value_ep": 0.0984,
+      "reversal_1m": 0.0343,
       "weight": 0.0333
     },
     {
-      "code": "95090",
-      "name": "北海道電力",
-      "score": 0.8014,
-      "value_bp": 1.771,
-      "value_ep": 0.1817,
-      "reversal_1m": -0.0193,
+      "code": "45160",
+      "name": "日本新薬",
+      "score": 0.8938,
+      "value_bp": 1.263,
+      "value_ep": 0.1236,
+      "reversal_1m": 0.0344,
       "weight": 0.0333
     },
     {
       "code": "78460",
       "name": "パイロットコーポレーション",
-      "score": 0.8,
-      "value_bp": 1.825,
-      "value_ep": 0.1377,
-      "reversal_1m": -0.0169,
+      "score": 0.8881,
+      "value_bp": 1.892,
+      "value_ep": 0.1427,
+      "reversal_1m": 0.0189,
       "weight": 0.0333
     },
     {
-      "code": "52140",
-      "name": "日本電気硝子",
-      "score": 0.7996,
-      "value_bp": 1.382,
-      "value_ep": 0.0699,
+      "code": "13330",
+      "name": "Ｕｍｉｏｓ",
+      "score": 0.8712,
+      "value_bp": 1.293,
+      "value_ep": 0.1156,
+      "reversal_1m": 0.0246,
+      "weight": 0.0333
+    },
+    {
+      "code": "90310",
+      "name": "西日本鉄道",
+      "score": 0.868,
+      "value_bp": 1.234,
+      "value_ep": 0.133,
+      "reversal_1m": 0.0256,
+      "weight": 0.0333
+    },
+    {
+      "code": "58020",
+      "name": "住友電気工業",
+      "score": 0.8591,
+      "value_bp": 1.598,
+      "value_ep": 0.2114,
+      "reversal_1m": 0.0088,
+      "weight": 0.0333
+    },
+    {
+      "code": "66320",
+      "name": "ＪＶＣケンウッド",
+      "score": 0.8566,
+      "value_bp": 1.025,
+      "value_ep": 0.1046,
+      "reversal_1m": 0.0406,
+      "weight": 0.0333
+    },
+    {
+      "code": "80600",
+      "name": "キヤノンマーケティングジャパン",
+      "score": 0.8535,
+      "value_bp": 1.066,
+      "value_ep": 0.1033,
+      "reversal_1m": 0.0346,
+      "weight": 0.0333
+    },
+    {
+      "code": "83090",
+      "name": "三井住友トラストグループ",
+      "score": 0.846,
+      "value_bp": 2.864,
+      "value_ep": 0.255,
+      "reversal_1m": -0.0028,
+      "weight": 0.0333
+    },
+    {
+      "code": "90010",
+      "name": "東武鉄道",
+      "score": 0.8386,
+      "value_bp": 1.082,
+      "value_ep": 0.0969,
+      "reversal_1m": 0.0331,
+      "weight": 0.0333
+    },
+    {
+      "code": "45400",
+      "name": "ツムラ",
+      "score": 0.8343,
+      "value_bp": 1.169,
+      "value_ep": 0.0992,
       "reversal_1m": 0.0238,
+      "weight": 0.0333
+    },
+    {
+      "code": "72690",
+      "name": "スズキ",
+      "score": 0.8315,
+      "value_bp": 0.853,
+      "value_ep": 0.1088,
+      "reversal_1m": 0.0804,
+      "weight": 0.0333
+    },
+    {
+      "code": "16050",
+      "name": "ＩＮＰＥＸ",
+      "score": 0.8308,
+      "value_bp": 1.075,
+      "value_ep": 0.0826,
+      "reversal_1m": 0.0436,
+      "weight": 0.0333
+    },
+    {
+      "code": "19280",
+      "name": "積水ハウス",
+      "score": 0.8241,
+      "value_bp": 0.988,
+      "value_ep": 0.1048,
+      "reversal_1m": 0.0312,
+      "weight": 0.0333
+    },
+    {
+      "code": "76490",
+      "name": "スギホールディングス",
+      "score": 0.8205,
+      "value_bp": 1.225,
+      "value_ep": 0.1807,
+      "reversal_1m": 0.008,
+      "weight": 0.0333
+    },
+    {
+      "code": "82420",
+      "name": "エイチ・ツー・オー　リテイリング",
+      "score": 0.8149,
+      "value_bp": 0.942,
+      "value_ep": 0.0836,
+      "reversal_1m": 0.0623,
+      "weight": 0.0333
+    },
+    {
+      "code": "41180",
+      "name": "カネカ",
+      "score": 0.8135,
+      "value_bp": 1.357,
+      "value_ep": 0.0806,
+      "reversal_1m": 0.0216,
+      "weight": 0.0333
+    },
+    {
+      "code": "57140",
+      "name": "ＤＯＷＡホールディングス",
+      "score": 0.8103,
+      "value_bp": 0.824,
+      "value_ep": 0.1078,
+      "reversal_1m": 0.0671,
+      "weight": 0.0333
+    },
+    {
+      "code": "32890",
+      "name": "東急不動産ホールディングス",
+      "score": 0.8085,
+      "value_bp": 0.975,
+      "value_ep": 0.104,
+      "reversal_1m": 0.0282,
+      "weight": 0.0333
+    },
+    {
+      "code": "51010",
+      "name": "横浜ゴム",
+      "score": 0.8035,
+      "value_bp": 0.919,
+      "value_ep": 0.0891,
+      "reversal_1m": 0.0439,
+      "weight": 0.0333
+    },
+    {
+      "code": "80530",
+      "name": "住友商事",
+      "score": 0.8011,
+      "value_bp": 2.074,
+      "value_ep": 0.2648,
+      "reversal_1m": -0.0437,
+      "weight": 0.0333
+    },
+    {
+      "code": "95050",
+      "name": "北陸電力",
+      "score": 0.7982,
+      "value_bp": 2.019,
+      "value_ep": 0.2431,
+      "reversal_1m": -0.0442,
+      "weight": 0.0333
+    },
+    {
+      "code": "95090",
+      "name": "北海道電力",
+      "score": 0.7943,
+      "value_bp": 1.747,
+      "value_ep": 0.1792,
+      "reversal_1m": -0.033,
+      "weight": 0.0333
+    },
+    {
+      "code": "90450",
+      "name": "京阪ホールディングス",
+      "score": 0.7904,
+      "value_bp": 1.071,
+      "value_ep": 0.0996,
+      "reversal_1m": 0.0132,
       "weight": 0.0333
     }
   ]
