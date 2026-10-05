@@ -4,13 +4,13 @@
   "strategy": "value傾斜（B/P 0.4 + 益回り 0.4 + 短期反転 0.2）ロングオンリー上位分位",
   "ann_return_pct": 15.0,
   "ann_vol_pct": 15.1,
-  "sharpe": 1.0,
+  "sharpe": 1.01,
   "max_dd_pct": -28.0,
   "cagr_pretax_pct": 14.6,
   "cagr_aftertax_pct": 11.5,
-  "cagr_topix_pct": 10.4,
-  "excess_nisa_pct": 4.2,
-  "excess_taxable_pct": 1.1,
+  "cagr_topix_pct": 10.5,
+  "excess_nisa_pct": 4.1,
+  "excess_taxable_pct": 1.0,
   "cost_bps_oneway": 20.0,
   "equity_curve": [
     {
@@ -595,8 +595,8 @@
     },
     {
       "date": "2026-09",
-      "strategy": 3.9,
-      "topix": 2.688
+      "strategy": 3.914,
+      "topix": 2.724
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
