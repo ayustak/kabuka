@@ -5,7 +5,7 @@
   "ann_return_pct": 14.4,
   "ann_vol_pct": 15.1,
   "sharpe": 0.97,
-  "max_dd_pct": -27.9,
+  "max_dd_pct": -28.0,
   "cagr_pretax_pct": 13.9,
   "cagr_aftertax_pct": 10.9,
   "cagr_topix_pct": 10.3,
@@ -155,7 +155,7 @@
     },
     {
       "date": "2019-06",
-      "strategy": 1.16,
+      "strategy": 1.159,
       "topix": 1.019
     },
     {
@@ -165,7 +165,7 @@
     },
     {
       "date": "2019-08",
-      "strategy": 1.166,
+      "strategy": 1.165,
       "topix": 1.034
     },
     {
@@ -175,112 +175,112 @@
     },
     {
       "date": "2019-10",
-      "strategy": 1.236,
+      "strategy": 1.235,
       "topix": 1.107
     },
     {
       "date": "2019-11",
-      "strategy": 1.243,
+      "strategy": 1.241,
       "topix": 1.121
     },
     {
       "date": "2019-12",
-      "strategy": 1.192,
+      "strategy": 1.19,
       "topix": 1.097
     },
     {
       "date": "2020-01",
-      "strategy": 1.057,
+      "strategy": 1.056,
       "topix": 0.984
     },
     {
       "date": "2020-02",
-      "strategy": 0.948,
+      "strategy": 0.946,
       "topix": 0.914
     },
     {
       "date": "2020-03",
-      "strategy": 1.009,
+      "strategy": 1.007,
       "topix": 0.954
     },
     {
       "date": "2020-04",
-      "strategy": 1.066,
+      "strategy": 1.064,
       "topix": 1.018
     },
     {
       "date": "2020-05",
-      "strategy": 1.051,
+      "strategy": 1.049,
       "topix": 1.015
     },
     {
       "date": "2020-06",
-      "strategy": 0.977,
+      "strategy": 0.976,
       "topix": 0.974
     },
     {
       "date": "2020-07",
-      "strategy": 1.102,
+      "strategy": 1.1,
       "topix": 1.054
     },
     {
       "date": "2020-08",
-      "strategy": 1.097,
+      "strategy": 1.095,
       "topix": 1.059
     },
     {
       "date": "2020-09",
-      "strategy": 1.055,
+      "strategy": 1.053,
       "topix": 1.029
     },
     {
       "date": "2020-10",
-      "strategy": 1.156,
+      "strategy": 1.154,
       "topix": 1.143
     },
     {
       "date": "2020-11",
-      "strategy": 1.202,
+      "strategy": 1.2,
       "topix": 1.175
     },
     {
       "date": "2020-12",
-      "strategy": 1.228,
+      "strategy": 1.226,
       "topix": 1.178
     },
     {
       "date": "2021-01",
-      "strategy": 1.3,
+      "strategy": 1.298,
       "topix": 1.214
     },
     {
       "date": "2021-02",
-      "strategy": 1.419,
+      "strategy": 1.416,
       "topix": 1.273
     },
     {
       "date": "2021-03",
-      "strategy": 1.37,
+      "strategy": 1.368,
       "topix": 1.236
     },
     {
       "date": "2021-04",
-      "strategy": 1.382,
+      "strategy": 1.38,
       "topix": 1.252
     },
     {
       "date": "2021-05",
-      "strategy": 1.39,
+      "strategy": 1.388,
       "topix": 1.266
     },
     {
       "date": "2021-06",
-      "strategy": 1.363,
+      "strategy": 1.361,
       "topix": 1.238
     },
     {
       "date": "2021-07",
-      "strategy": 1.407,
+      "strategy": 1.404,
       "topix": 1.277
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "date": "2021-09",
-      "strategy": 1.43,
+      "strategy": 1.429,
       "topix": 1.303
     },
     {
@@ -350,12 +350,12 @@
     },
     {
       "date": "2022-09",
-      "strategy": 1.567,
+      "strategy": 1.568,
       "topix": 1.257
     },
     {
       "date": "2022-10",
-      "strategy": 1.641,
+      "strategy": 1.642,
       "topix": 1.293
     },
     {
@@ -375,17 +375,17 @@
     },
     {
       "date": "2023-02",
-      "strategy": 1.693,
+      "strategy": 1.694,
       "topix": 1.305
     },
     {
       "date": "2023-03",
-      "strategy": 1.753,
+      "strategy": 1.754,
       "topix": 1.34
     },
     {
       "date": "2023-04",
-      "strategy": 1.797,
+      "strategy": 1.798,
       "topix": 1.388
     },
     {
@@ -455,7 +455,7 @@
     },
     {
       "date": "2024-06",
-      "strategy": 2.49,
+      "strategy": 2.491,
       "topix": 1.82
     },
     {
@@ -465,27 +465,27 @@
     },
     {
       "date": "2024-08",
-      "strategy": 2.366,
+      "strategy": 2.367,
       "topix": 1.723
     },
     {
       "date": "2024-09",
-      "strategy": 2.39,
+      "strategy": 2.391,
       "topix": 1.756
     },
     {
       "date": "2024-10",
-      "strategy": 2.387,
+      "strategy": 2.388,
       "topix": 1.746
     },
     {
       "date": "2024-11",
-      "strategy": 2.485,
+      "strategy": 2.486,
       "topix": 1.814
     },
     {
       "date": "2024-12",
-      "strategy": 2.492,
+      "strategy": 2.493,
       "topix": 1.816
     },
     {
@@ -500,7 +500,7 @@
     },
     {
       "date": "2025-03",
-      "strategy": 2.43,
+      "strategy": 2.431,
       "topix": 1.737
     },
     {
@@ -520,7 +520,7 @@
     },
     {
       "date": "2025-07",
-      "strategy": 2.93,
+      "strategy": 2.931,
       "topix": 2.003
     },
     {
@@ -535,12 +535,12 @@
     },
     {
       "date": "2025-10",
-      "strategy": 3.201,
+      "strategy": 3.202,
       "topix": 2.2
     },
     {
       "date": "2025-11",
-      "strategy": 3.263,
+      "strategy": 3.264,
       "topix": 2.22
     },
     {
@@ -570,12 +570,12 @@
     },
     {
       "date": "2026-05",
-      "strategy": 3.532,
+      "strategy": 3.533,
       "topix": 2.602
     },
     {
       "date": "2026-06",
-      "strategy": 3.715,
+      "strategy": 3.716,
       "topix": 2.607
     },
     {
@@ -590,7 +590,7 @@
     },
     {
       "date": "2026-09",
-      "strategy": 3.672,
+      "strategy": 3.673,
       "topix": 2.674
     }
   ],
