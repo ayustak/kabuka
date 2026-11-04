@@ -2,13 +2,13 @@
   "period": "2017-02-28 〜 2026-10-31",
   "universe": "TOPIX500（時点別・生存者バイアス除去）",
   "strategy": "value傾斜（B/P 0.4 + 益回り 0.4 + 短期反転 0.2）ロングオンリー上位分位",
-  "ann_return_pct": 14.2,
+  "ann_return_pct": 14.1,
   "ann_vol_pct": 15.0,
   "sharpe": 0.96,
   "max_dd_pct": -27.9,
-  "cagr_pretax_pct": 13.8,
+  "cagr_pretax_pct": 13.7,
   "cagr_aftertax_pct": 10.8,
-  "cagr_topix_pct": 9.9,
+  "cagr_topix_pct": 9.8,
   "excess_nisa_pct": 4.0,
   "excess_taxable_pct": 1.0,
   "cost_bps_oneway": 20.0,
@@ -285,318 +285,318 @@
     },
     {
       "date": "2021-08",
-      "strategy": 1.464,
+      "strategy": 1.466,
       "topix": 1.322
     },
     {
       "date": "2021-09",
-      "strategy": 1.43,
+      "strategy": 1.432,
       "topix": 1.303
     },
     {
       "date": "2021-10",
-      "strategy": 1.358,
+      "strategy": 1.36,
       "topix": 1.256
     },
     {
       "date": "2021-11",
-      "strategy": 1.415,
+      "strategy": 1.417,
       "topix": 1.298
     },
     {
       "date": "2021-12",
-      "strategy": 1.412,
+      "strategy": 1.414,
       "topix": 1.235
     },
     {
       "date": "2022-01",
-      "strategy": 1.444,
+      "strategy": 1.446,
       "topix": 1.229
     },
     {
       "date": "2022-02",
-      "strategy": 1.465,
+      "strategy": 1.468,
       "topix": 1.268
     },
     {
       "date": "2022-03",
-      "strategy": 1.459,
+      "strategy": 1.462,
       "topix": 1.237
     },
     {
       "date": "2022-04",
-      "strategy": 1.491,
+      "strategy": 1.494,
       "topix": 1.246
     },
     {
       "date": "2022-05",
-      "strategy": 1.509,
+      "strategy": 1.512,
       "topix": 1.219
     },
     {
       "date": "2022-06",
-      "strategy": 1.558,
+      "strategy": 1.561,
       "topix": 1.264
     },
     {
       "date": "2022-07",
-      "strategy": 1.595,
+      "strategy": 1.598,
       "topix": 1.279
     },
     {
       "date": "2022-08",
-      "strategy": 1.504,
+      "strategy": 1.507,
       "topix": 1.196
     },
     {
       "date": "2022-09",
-      "strategy": 1.568,
+      "strategy": 1.571,
       "topix": 1.257
     },
     {
       "date": "2022-10",
-      "strategy": 1.642,
+      "strategy": 1.646,
       "topix": 1.293
     },
     {
       "date": "2022-11",
-      "strategy": 1.586,
+      "strategy": 1.589,
       "topix": 1.232
     },
     {
       "date": "2022-12",
-      "strategy": 1.648,
+      "strategy": 1.651,
       "topix": 1.287
     },
     {
       "date": "2023-01",
-      "strategy": 1.694,
+      "strategy": 1.697,
       "topix": 1.298
     },
     {
       "date": "2023-02",
-      "strategy": 1.694,
+      "strategy": 1.697,
       "topix": 1.305
     },
     {
       "date": "2023-03",
-      "strategy": 1.754,
+      "strategy": 1.758,
       "topix": 1.34
     },
     {
       "date": "2023-04",
-      "strategy": 1.798,
+      "strategy": 1.802,
       "topix": 1.388
     },
     {
       "date": "2023-05",
-      "strategy": 1.93,
+      "strategy": 1.933,
       "topix": 1.491
     },
     {
       "date": "2023-06",
-      "strategy": 1.998,
+      "strategy": 2.001,
       "topix": 1.513
     },
     {
       "date": "2023-07",
-      "strategy": 2.056,
+      "strategy": 2.06,
       "topix": 1.519
     },
     {
       "date": "2023-08",
-      "strategy": 2.076,
+      "strategy": 2.08,
       "topix": 1.513
     },
     {
       "date": "2023-09",
-      "strategy": 2.025,
+      "strategy": 2.029,
       "topix": 1.468
     },
     {
       "date": "2023-10",
-      "strategy": 2.141,
+      "strategy": 2.145,
       "topix": 1.547
     },
     {
       "date": "2023-11",
-      "strategy": 2.134,
+      "strategy": 2.138,
       "topix": 1.541
     },
     {
       "date": "2023-12",
-      "strategy": 2.304,
+      "strategy": 2.309,
       "topix": 1.662
     },
     {
       "date": "2024-01",
-      "strategy": 2.403,
+      "strategy": 2.408,
       "topix": 1.743
     },
     {
       "date": "2024-02",
-      "strategy": 2.517,
+      "strategy": 2.522,
       "topix": 1.803
     },
     {
       "date": "2024-03",
-      "strategy": 2.498,
+      "strategy": 2.503,
       "topix": 1.787
     },
     {
       "date": "2024-04",
-      "strategy": 2.511,
+      "strategy": 2.516,
       "topix": 1.806
     },
     {
       "date": "2024-05",
-      "strategy": 2.507,
+      "strategy": 2.511,
       "topix": 1.83
     },
     {
       "date": "2024-06",
-      "strategy": 2.493,
+      "strategy": 2.498,
       "topix": 1.82
     },
     {
       "date": "2024-07",
-      "strategy": 2.411,
+      "strategy": 2.416,
       "topix": 1.767
     },
     {
       "date": "2024-08",
-      "strategy": 2.366,
+      "strategy": 2.371,
       "topix": 1.723
     },
     {
       "date": "2024-09",
-      "strategy": 2.389,
+      "strategy": 2.394,
       "topix": 1.756
     },
     {
       "date": "2024-10",
-      "strategy": 2.389,
+      "strategy": 2.394,
       "topix": 1.746
     },
     {
       "date": "2024-11",
-      "strategy": 2.488,
+      "strategy": 2.492,
       "topix": 1.814
     },
     {
       "date": "2024-12",
-      "strategy": 2.495,
+      "strategy": 2.5,
       "topix": 1.816
     },
     {
       "date": "2025-01",
-      "strategy": 2.456,
+      "strategy": 2.461,
       "topix": 1.747
     },
     {
       "date": "2025-02",
-      "strategy": 2.459,
+      "strategy": 2.464,
       "topix": 1.732
     },
     {
       "date": "2025-03",
-      "strategy": 2.432,
+      "strategy": 2.436,
       "topix": 1.737
     },
     {
       "date": "2025-04",
-      "strategy": 2.553,
+      "strategy": 2.557,
       "topix": 1.825
     },
     {
       "date": "2025-05",
-      "strategy": 2.582,
+      "strategy": 2.587,
       "topix": 1.858
     },
     {
       "date": "2025-06",
-      "strategy": 2.744,
+      "strategy": 2.749,
       "topix": 1.917
     },
     {
       "date": "2025-07",
-      "strategy": 2.928,
+      "strategy": 2.934,
       "topix": 2.003
     },
     {
       "date": "2025-08",
-      "strategy": 2.951,
+      "strategy": 2.956,
       "topix": 2.044
     },
     {
       "date": "2025-09",
-      "strategy": 2.995,
+      "strategy": 3.001,
       "topix": 2.17
     },
     {
       "date": "2025-10",
-      "strategy": 3.199,
+      "strategy": 3.205,
       "topix": 2.2
     },
     {
       "date": "2025-11",
-      "strategy": 3.261,
+      "strategy": 3.267,
       "topix": 2.22
     },
     {
       "date": "2025-12",
-      "strategy": 3.377,
+      "strategy": 3.384,
       "topix": 2.323
     },
     {
       "date": "2026-01",
-      "strategy": 3.721,
+      "strategy": 3.728,
       "topix": 2.565
     },
     {
       "date": "2026-02",
-      "strategy": 3.387,
+      "strategy": 3.394,
       "topix": 2.278
     },
     {
       "date": "2026-03",
-      "strategy": 3.429,
+      "strategy": 3.436,
       "topix": 2.428
     },
     {
       "date": "2026-04",
-      "strategy": 3.52,
+      "strategy": 3.527,
       "topix": 2.577
     },
     {
       "date": "2026-05",
-      "strategy": 3.53,
+      "strategy": 3.536,
       "topix": 2.602
     },
     {
       "date": "2026-06",
-      "strategy": 3.712,
+      "strategy": 3.72,
       "topix": 2.607
     },
     {
       "date": "2026-07",
-      "strategy": 3.89,
+      "strategy": 3.897,
       "topix": 2.707
     },
     {
       "date": "2026-08",
-      "strategy": 3.717,
+      "strategy": 3.724,
       "topix": 2.676
     },
     {
       "date": "2026-09",
-      "strategy": 3.667,
+      "strategy": 3.674,
       "topix": 2.583
     },
     {
       "date": "2026-10",
-      "strategy": 3.646,
-      "topix": 2.56
+      "strategy": 3.621,
+      "topix": 2.537
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
