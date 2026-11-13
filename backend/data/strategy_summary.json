@@ -10,7 +10,7 @@
   "cagr_aftertax_pct": 10.9,
   "cagr_topix_pct": 9.9,
   "excess_nisa_pct": 4.0,
-  "excess_taxable_pct": 1.0,
+  "excess_taxable_pct": 1.1,
   "cost_bps_oneway": 20.0,
   "equity_curve": [
     {
@@ -455,47 +455,47 @@
     },
     {
       "date": "2024-06",
-      "strategy": 2.489,
+      "strategy": 2.488,
       "topix": 1.82
     },
     {
       "date": "2024-07",
-      "strategy": 2.407,
+      "strategy": 2.406,
       "topix": 1.767
     },
     {
       "date": "2024-08",
-      "strategy": 2.363,
+      "strategy": 2.364,
       "topix": 1.723
     },
     {
       "date": "2024-09",
-      "strategy": 2.386,
+      "strategy": 2.388,
       "topix": 1.756
     },
     {
       "date": "2024-10",
-      "strategy": 2.386,
+      "strategy": 2.385,
       "topix": 1.746
     },
     {
       "date": "2024-11",
-      "strategy": 2.484,
+      "strategy": 2.483,
       "topix": 1.814
     },
     {
       "date": "2024-12",
-      "strategy": 2.492,
+      "strategy": 2.49,
       "topix": 1.816
     },
     {
       "date": "2025-01",
-      "strategy": 2.452,
+      "strategy": 2.451,
       "topix": 1.747
     },
     {
       "date": "2025-02",
-      "strategy": 2.455,
+      "strategy": 2.454,
       "topix": 1.732
     },
     {
@@ -505,98 +505,98 @@
     },
     {
       "date": "2025-04",
-      "strategy": 2.549,
+      "strategy": 2.552,
       "topix": 1.825
     },
     {
       "date": "2025-05",
-      "strategy": 2.578,
+      "strategy": 2.581,
       "topix": 1.858
     },
     {
       "date": "2025-06",
-      "strategy": 2.74,
+      "strategy": 2.743,
       "topix": 1.917
     },
     {
       "date": "2025-07",
-      "strategy": 2.924,
+      "strategy": 2.928,
       "topix": 2.003
     },
     {
       "date": "2025-08",
-      "strategy": 2.946,
+      "strategy": 2.95,
       "topix": 2.044
     },
     {
       "date": "2025-09",
-      "strategy": 2.99,
+      "strategy": 2.994,
       "topix": 2.17
     },
     {
       "date": "2025-10",
-      "strategy": 3.194,
+      "strategy": 3.198,
       "topix": 2.2
     },
     {
       "date": "2025-11",
-      "strategy": 3.256,
+      "strategy": 3.26,
       "topix": 2.22
     },
     {
       "date": "2025-12",
-      "strategy": 3.372,
+      "strategy": 3.376,
       "topix": 2.323
     },
     {
       "date": "2026-01",
-      "strategy": 3.715,
+      "strategy": 3.72,
       "topix": 2.565
     },
     {
       "date": "2026-02",
-      "strategy": 3.382,
+      "strategy": 3.386,
       "topix": 2.278
     },
     {
       "date": "2026-03",
-      "strategy": 3.424,
+      "strategy": 3.428,
       "topix": 2.428
     },
     {
       "date": "2026-04",
-      "strategy": 3.515,
+      "strategy": 3.519,
       "topix": 2.577
     },
     {
       "date": "2026-05",
-      "strategy": 3.524,
+      "strategy": 3.529,
       "topix": 2.602
     },
     {
       "date": "2026-06",
-      "strategy": 3.707,
+      "strategy": 3.711,
       "topix": 2.607
     },
     {
       "date": "2026-07",
-      "strategy": 3.884,
+      "strategy": 3.889,
       "topix": 2.707
     },
     {
       "date": "2026-08",
-      "strategy": 3.711,
+      "strategy": 3.716,
       "topix": 2.676
     },
     {
       "date": "2026-09",
-      "strategy": 3.662,
+      "strategy": 3.666,
       "topix": 2.583
     },
     {
       "date": "2026-10",
-      "strategy": 3.675,
-      "topix": 2.565
+      "strategy": 3.685,
+      "topix": 2.567
     }
   ],
   "note": "コスト後・税近似は月次全入替前提。NISA・低回転で改善余地。生存者バイアス除去済だが過去実績は将来を保証しない。"
